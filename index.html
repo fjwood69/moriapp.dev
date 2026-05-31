@@ -139,9 +139,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
-      padding: 4rem 2rem 6rem;
+      padding: clamp(2.5rem, 8vh, 4.5rem) 2rem 6rem;
       position: relative;
       overflow: hidden;
     }
@@ -505,7 +505,7 @@
         gap: 1rem;
       }
 
-      #hero { padding: 4rem 1.5rem 5rem; }
+      #hero { padding: 2rem 1.5rem 4rem; }
       .scroll-hint { display: none; }
 
       h2 { margin-bottom: 1.5rem; }
@@ -527,7 +527,7 @@
   <!-- ═══ 1. HERO ═══ -->
   <section id="hero">
     <img class="hero-img" src="assets/header-dark.svg" alt="Mori">
-    <h1 class="hero-title">Mori (森)</h1>
+    <h1 class="hero-title">mori (森)</h1>
     <p class="hero-tagline">
       A shared memory layer for AI coding agents —<br>one that <em>compounds</em>.
     </p>
