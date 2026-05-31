@@ -407,6 +407,10 @@
     .c-ok  { color: var(--green); }
 
     .qs-cta {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
       text-align: center;
       margin: 0;
     }
@@ -612,9 +616,10 @@ docker compose -f deploy/homelab/docker-compose.yml up -d</span>
 <span class="c-cmd">curl http://localhost:8968/health</span>
 <span class="c-ok">{"status":"ok"}</span></pre>
         </div>
-        <p class="qs-cta">
-          <a href="https://github.com/fjwood69/mori/tree/main/docs/getting-started" target="_blank" rel="noopener">Full setup guide →</a>
-        </p>
+        <div class="qs-cta">
+          <a href="https://github.com/fjwood69/mori/tree/main/docs/deployment" target="_blank" rel="noopener">Full deployment guide →</a>
+          <a href="https://github.com/fjwood69/mori/tree/main/docs/getting-started" target="_blank" rel="noopener">Agent setup guide →</a>
+        </div>
       </div>
     </div>
   </section>
