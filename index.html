@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mori (森) — Shared memory for AI coding agents</title>
+  <title>mori (森) — Shared memory for AI coding agents</title>
   <meta name="description" content="A shared memory layer for AI coding agents — one that compounds.">
-  <meta property="og:title" content="Mori (森) — Shared memory for AI coding agents">
+  <meta property="og:title" content="mori (森) — Shared memory for AI coding agents">
   <meta property="og:description" content="A shared memory layer for AI coding agents — one that compounds.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://moriapp.dev">
@@ -423,18 +423,8 @@
 
     /* ── For teams ── */
 
-    .whispers {
-      margin-top: 4.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      text-align: center;
-    }
-
-    .whispers img {
-      max-width: min(740px, 100%);
-      opacity: 0.92;
+    .two-col + .two-col {
+      margin-top: 3.5rem;
     }
 
     .whispers-caption {
@@ -442,8 +432,7 @@
       font-style: italic;
       font-weight: 300;
       font-size: 1rem;
-      color: var(--text-muted);
-      max-width: 540px;
+      color: var(--text);
       line-height: 1.65;
     }
 
@@ -643,9 +632,13 @@ docker compose -f deploy/homelab/docker-compose.yml up -d</span>
           <p>Point every instance at the same server. That's it.</p>
         </div>
       </div>
-      <div class="whispers">
-        <img src="assets/figure-8-the-forest-whispers-dark.svg" alt="The forest whispers — inter-agent messaging">
-        <p class="whispers-caption">The forest remembers. Now it whispers too — tasks and decisions passed directly between agents, without a shared session.</p>
+      <div class="two-col">
+        <div class="prose">
+          <p class="whispers-caption">The forest remembers. Now it whispers too — tasks and decisions passed directly between agents, without a shared session.</p>
+        </div>
+        <div class="fig-wrap">
+          <img src="assets/figure-8-the-forest-whispers-dark.svg" alt="The forest whispers — inter-agent messaging">
+        </div>
       </div>
     </div>
   </section>
