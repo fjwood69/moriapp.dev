@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="570" viewBox="0 0 900 570" font-family="&#39;JetBrains Mono&#39;, ui-monospace, &#39;SF Mono&#39;, Menlo, monospace">
-  
+
   <rect width="900" height="570" fill="#e8eae1"></rect>
   <g stroke="#d6d2c5" stroke-width="1" fill="none">
   <path d="M12 22 L12 12 L22 12"></path><path d="M878 12 L888 12 L888 22"></path>
   <path d="M12 548 L12 558 L22 558 M878 558 L888 558 L888 548"></path>
 </g>
-  
+
   <text x="40" y="72" font-size="28" font-weight="500" letter-spacing="-0.04em" fill="#112418">Architecture.</text>
   <text x="860" y="56" text-anchor="end" font-size="10" font-weight="400" letter-spacing="0.08em" fill="#5a5f5b">TWO LAYERS · HTTP / MCP</text>
   <text x="40" y="118" font-size="10" letter-spacing="0.14em" fill="#5a5f5b">AGENT INSTANCES · N DEVICES</text>
@@ -54,12 +54,12 @@
   </g><g transform="translate(324 302)">
     <rect width="240" height="60" fill="#f3f0e8" stroke="#5a5f5b" stroke-width="1"></rect>
     <text x="12" y="22" font-size="13" font-weight="500" fill="#112418">Dream Pipeline</text>
-    
+
     <text x="12" y="42" font-size="11" fill="#5a5f5b">events · distil · evict</text>
   </g><g transform="translate(592 302)">
     <rect width="240" height="60" fill="#f3f0e8" stroke="#5a5f5b" stroke-width="1"></rect>
     <text x="12" y="22" font-size="13" font-weight="500" fill="#112418">Consult Advisor</text>
-    
+
     <text x="12" y="42" font-size="11" fill="#5a5f5b">strategic guidance on demand</text>
   </g>
   <g transform="translate(56 374)">
@@ -70,7 +70,7 @@
   </g><g transform="translate(324 374)">
     <rect width="240" height="60" fill="#f3f0e8" stroke="#5a5f5b" stroke-width="1"></rect>
     <text x="12" y="22" font-size="13" font-weight="500" fill="#112418">Device Deployer</text>
-    
+
     <text x="12" y="42" font-size="11" fill="#5a5f5b">skill deployment</text>
   </g><g transform="translate(592 374)">
     <rect width="240" height="60" fill="#f3f0e8" stroke="#5a5f5b" stroke-width="1"></rect>
