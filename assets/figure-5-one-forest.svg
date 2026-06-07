@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="510" viewBox="0 0 900 510" font-family="&#39;JetBrains Mono&#39;, ui-monospace, &#39;SF Mono&#39;, Menlo, monospace">
-  
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="510" viewBox="0 0 900 510" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace">
+
   <rect width="900" height="510" fill="#e8eae1"></rect>
   <g stroke="#d6d2c5" stroke-width="1" fill="none">
   <path d="M12 22 L12 12 L22 12"></path><path d="M878 12 L888 12 L888 22"></path>
