@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="254" viewBox="0 0 900 254" font-family="&#39;JetBrains Mono&#39;, ui-monospace, &#39;SF Mono&#39;, Menlo, monospace">
-  
+
   <rect width="900" height="254" fill="none"></rect>
   <g transform="translate(32 79) scale(1.5)">
     <line x1="6" y1="32" x2="58" y2="32" stroke="#f3f0e8" stroke-width="1.25" stroke-linecap="round"></line>
