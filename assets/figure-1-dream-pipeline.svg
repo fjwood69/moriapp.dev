@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" font-family="&#39;JetBrains Mono&#39;, ui-monospace, &#39;SF Mono&#39;, Menlo, monospace">
-  
+
   <defs><pattern id="g1" width="20" height="20" patternUnits="userSpaceOnUse">
     <line x1="20" y1="0" x2="20" y2="20" stroke="rgba(0,0,0,0.04)" stroke-width="1"></line>
     <line x1="0" y1="20" x2="20" y2="20" stroke="rgba(0,0,0,0.04)" stroke-width="1"></line>
@@ -10,7 +10,7 @@
   <path d="M12 22 L12 12 L22 12"></path><path d="M878 12 L888 12 L888 22"></path>
   <path d="M12 408 L12 418 L22 418 M878 418 L888 418 L888 408"></path>
 </g>
-  
+
   <text x="40" y="72" font-size="28" font-weight="500" letter-spacing="-0.04em" fill="#112418">The dream pipeline</text>
   <text x="860" y="56" text-anchor="end" font-size="10" font-weight="400" letter-spacing="0.08em" fill="#5a5f5b">ACTIVITY → DISTIL → MEMORY</text>
   <text x="150" y="138" font-size="10" letter-spacing="0.14em" fill="#2a2f2c">SESSION ACTIVITY</text>
