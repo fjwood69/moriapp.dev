@@ -70,8 +70,8 @@ ul,ol{margin:0 0 1.25rem 1.4rem;}
 li{margin-bottom:.5rem;}
 .wp-fig{margin:2.5rem 0;text-align:center;}
 .wp-fig img{max-width:100%;height:auto;border:1px solid var(--border);border-radius:8px;background:#fff;}
-.wp-fig figcaption{font-size:.85rem;color:var(--text-faint);margin-top:.75rem;font-style:italic;}
-.wp-fig .guard{color:var(--green);font-style:normal;display:block;margin-top:.25rem;font-size:.8rem;}
+.wp-fig figcaption{margin-top:1rem;font-size:.9rem;line-height:1.55;color:var(--text-muted);font-style:italic;text-align:left;border-left:2px solid var(--green-deep);background:var(--green-wash);padding:.75rem 1rem;border-radius:0 4px 4px 0;}
+.wp-fig .guard{color:var(--green);font-style:normal;display:block;margin-top:.35rem;font-size:.85rem;font-weight:500;}
 sup a,.footnote-ref a{border:none;font-size:.7em;font-weight:500;}
 .footnote{font-size:.9rem;border-top:1px solid var(--border);margin-top:3.5rem;padding-top:1rem;color:var(--text-muted);}
 .footnote::before{content:"Notes";display:block;font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--text);margin-bottom:1.25rem;}
@@ -111,7 +111,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="article:author" content="Fred Wood">
-<meta property="article:published_time" content="2026-06-16">
+<meta property="article:published_time" content="2026-06-16T18:30:00+01:00">
 <meta name="author" content="Fred Wood">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Deterministic Boundaries for Non-Deterministic Agents">
@@ -129,7 +129,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 <div class="topbar"><div class="wrap"><a href="/">← back to moriapp.dev</a><a href="{toggle_href}">{toggle_text}</a></div></div>
 <div class="wrap">
 <header class="hero">
-  <div class="kicker">Whitepaper</div>
+  <div class="kicker">Whitepaper · 16 June 2026</div>
   <h1>Deterministic Boundaries for Non-Deterministic Agents</h1>
   <p class="byline"><strong>Fred Wood</strong> — 25 years in financial-services infrastructure. Mori is an independent project.</p>
   <p class="sub">Why information doesn't bind AI coding-agent behaviour — and what does. A pre-registered
