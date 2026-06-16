@@ -50,9 +50,15 @@ li{margin-bottom:.5rem;}
 .wp-fig img{max-width:100%;height:auto;border:1px solid var(--border);border-radius:8px;background:#fff;}
 .wp-fig figcaption{font-size:.85rem;color:var(--text-faint);margin-top:.75rem;font-style:italic;}
 .wp-fig .guard{color:var(--green);font-style:normal;display:block;margin-top:.25rem;font-size:.8rem;}
-sup a,.footnote-ref a{border:none;font-size:.75em;}
-.footnote{font-size:.88rem;border-top:1px solid var(--border);margin-top:3rem;padding-top:1.5rem;color:var(--text-faint);}
-.footnote ol{margin-left:1.2rem;}
+sup a,.footnote-ref a{border:none;font-size:.7em;font-weight:500;}
+.footnote{font-size:.9rem;border-top:1px solid var(--border);margin-top:3.5rem;padding-top:1rem;color:var(--text-muted);}
+.footnote::before{content:"Notes";display:block;font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--text);margin-bottom:1.25rem;}
+.footnote hr{display:none;}
+.footnote ol{margin-left:1.3rem;}
+.footnote li{margin-bottom:1.1rem;padding-left:.35rem;line-height:1.65;}
+.footnote li::marker{color:var(--green);font-weight:500;}
+.footnote-backref{border:none!important;font-size:.85em;margin-left:.35em;opacity:.55;text-decoration:none;}
+.footnote-backref:hover{opacity:1;}
 footer.site{border-top:1px solid var(--border);margin-top:4rem;padding:2.5rem 0 4rem;font-size:.9rem;color:var(--text-faint);}
 footer.site a{color:var(--text-muted);}
 .wp-banner{padding:2.25rem 0 1.5rem;text-align:center;}.wp-banner img{height:84px;width:auto;max-width:92%;border-radius:10px;}</style>
@@ -115,7 +121,8 @@ the collapse is a property of the models, not the harness.<sup id="fnref:4th"><a
 <p>The single most clarifying result in the program is this — on the result-of-record three-harness run, one model
 <strong>called the tool, received output stating in plain text that the change would break a downstream build, and
 shipped the change anyway.</strong> It was handed the answer, in capital letters, and acted against it. (The isolated
-fourth-runtime replication, <sup id="fnref2:4th"><a class="footnote-ref" href="#fn:4th">3</a></sup>, reproduced this at 10/11 — a separate run, not a revision of this number.) This severs the assumption underneath most &ldquo;agentic
+fourth-runtime replication reproduced this at 10/11 — a separate run, not a revision of this number; see the
+fourth-runtime note.) This severs the assumption underneath most &ldquo;agentic
 safety&rdquo; stories — that the failure is a <em>retrieval</em> failure, that the model simply did not know. It knew. The
 drive to complete the assigned task outweighed the retrieved warning.</p>
 <p>The corrective, then, is not better information. It is enforcement — a rule the agent does not get to
@@ -488,13 +495,13 @@ and the dependency ground truth from the agent. Harm reproduced 11/11; in 10/11 
 agent&rsquo;s context <em>before</em> it edited the manifest (per-run conversation trajectories; one run bumped before
 consulting the tool). This is a <strong>cross-runtime replication, deliberately not counted as a fourth independent
 harness</strong> (it reuses the byte-identical prompt, fleet, and scorer; only the runtime varies). Its first attempt
-was discarded for contamination — see Appendix B. Board-ratified as a replication, 2026-06-16.&#160;<a class="footnote-backref" href="#fnref:4th" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4th" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+was discarded for contamination — see Appendix B. Board-ratified as a replication, 2026-06-16.&#160;<a class="footnote-backref" href="#fnref:4th" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
 </article>
 <footer class="site">
-  <p>mori (森) — a governed memory layer for AI coding agents.
+  <p>mori (森) — a governed shared memory layer for AI coding agents.
   <a href="/">moriapp.dev</a> · <a href="https://github.com/fjwood69/mori">github.com/fjwood69/mori</a> (AGPL-3.0)</p>
 </footer>
 </div>

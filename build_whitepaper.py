@@ -70,9 +70,15 @@ li{margin-bottom:.5rem;}
 .wp-fig img{max-width:100%;height:auto;border:1px solid var(--border);border-radius:8px;background:#fff;}
 .wp-fig figcaption{font-size:.85rem;color:var(--text-faint);margin-top:.75rem;font-style:italic;}
 .wp-fig .guard{color:var(--green);font-style:normal;display:block;margin-top:.25rem;font-size:.8rem;}
-sup a,.footnote-ref a{border:none;font-size:.75em;}
-.footnote{font-size:.88rem;border-top:1px solid var(--border);margin-top:3rem;padding-top:1.5rem;color:var(--text-faint);}
-.footnote ol{margin-left:1.2rem;}
+sup a,.footnote-ref a{border:none;font-size:.7em;font-weight:500;}
+.footnote{font-size:.9rem;border-top:1px solid var(--border);margin-top:3.5rem;padding-top:1rem;color:var(--text-muted);}
+.footnote::before{content:"Notes";display:block;font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--text);margin-bottom:1.25rem;}
+.footnote hr{display:none;}
+.footnote ol{margin-left:1.3rem;}
+.footnote li{margin-bottom:1.1rem;padding-left:.35rem;line-height:1.65;}
+.footnote li::marker{color:var(--green);font-weight:500;}
+.footnote-backref{border:none!important;font-size:.85em;margin-left:.35em;opacity:.55;text-decoration:none;}
+.footnote-backref:hover{opacity:1;}
 footer.site{border-top:1px solid var(--border);margin-top:4rem;padding:2.5rem 0 4rem;font-size:.9rem;color:var(--text-faint);}
 footer.site a{color:var(--text-muted);}
 """
@@ -120,7 +126,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 {body}
 </article>
 <footer class="site">
-  <p>mori (森) — a governed memory layer for AI coding agents.
+  <p>mori (森) — a governed shared memory layer for AI coding agents.
   <a href="/">moriapp.dev</a> · <a href="https://github.com/fjwood69/mori">github.com/fjwood69/mori</a> (AGPL-3.0)</p>
 </footer>
 </div>
