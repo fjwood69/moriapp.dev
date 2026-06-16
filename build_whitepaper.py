@@ -105,6 +105,13 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 <meta property="og:description" content="Seven model families, three independent harnesses, every result checked against the code — including the nulls and every retraction.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://moriapp.dev/whitepaper">
+<meta property="og:image" content="https://moriapp.dev/assets/whitepaper-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Deterministic Boundaries for Non-Deterministic Agents">
+<meta name="twitter:description" content="A pre-registered benchmark of AI coding agents — every result checked against the code, including the nulls and retractions.">
+<meta name="twitter:image" content="https://moriapp.dev/assets/whitepaper-card.png">
 <meta name="theme-color" content="{themecolor}">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>森</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
