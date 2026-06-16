@@ -78,15 +78,15 @@ footer.site a{color:var(--text-muted);}
 """
 
 THEMES = {
- "whitepaper.html":       ("DARK",  "/whitepaper-light", "See light version →", "#0d1117",
+ "whitepaper.html":       ("DARK",  "/whitepaper-light", "See light version →", "#0d1117", "header-dark.svg",
    "--bg:#0d1117;--surface:#161b22;--border:#21262d;--text:#e6edf3;--text-muted:#8b949e;--text-faint:#6e7681;--green:#52b788;--green-deep:#1b4332;--green-faint:rgba(82,183,136,.3);--green-wash:rgba(27,67,50,.12);--row-hover:rgba(255,255,255,.02);"),
- "whitepaper-light.html": ("LIGHT", "/whitepaper",       "See dark version →",  "#fbfbf9",
+ "whitepaper-light.html": ("LIGHT", "/whitepaper",       "See dark version →",  "#fbfbf9", "header.svg",
    "--bg:#fbfbf9;--surface:#f0f0ec;--border:#e3e3dd;--text:#14241a;--text-muted:#46514c;--text-faint:#8a8f8a;--green:#2d6a4f;--green-deep:#1b4332;--green-faint:rgba(45,106,79,.3);--green-wash:rgba(45,106,79,.06);--row-hover:rgba(0,0,0,.02);"),
 }
-# the 森 banner (transparent, light strokes) always sits on a dark strip so it reads on either theme.
-BANNER = '.wp-banner{background:#0d1117;border-bottom:1px solid #21262d;padding:1.75rem 0;text-align:center;}.wp-banner img{height:64px;width:auto;max-width:90%;}'
+# each theme uses its matching banner (it carries its own background), shown as a centred card.
+BANNER = '.wp-banner{padding:2.25rem 0 1.5rem;text-align:center;}.wp-banner img{height:84px;width:auto;max-width:92%;border-radius:10px;}'
 
-for fname, (label, toggle_href, toggle_text, themecolor, root) in THEMES.items():
+for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES.items():
     css = f":root{{{root}}}" + LAYOUT + BANNER
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -107,7 +107,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, root) in THEMES.items()
 <style>{css}</style>
 </head>
 <body>
-<div class="wp-banner"><a href="/"><img src="assets/header-dark.svg" alt="mori (森)"></a></div>
+<div class="wp-banner"><a href="/"><img src="assets/{banner}" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
 <div class="topbar"><div class="wrap"><a href="/">← back to moriapp.dev</a><a href="{toggle_href}">{toggle_text}</a></div></div>
 <div class="wrap">
 <header class="hero">

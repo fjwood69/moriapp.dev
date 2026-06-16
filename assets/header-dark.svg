@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="254" viewBox="0 0 900 254" font-family="&#39;JetBrains Mono&#39;, ui-monospace, &#39;SF Mono&#39;, Menlo, monospace">
-
-  <rect width="900" height="254" fill="none"></rect>
+  
+  <rect width="900" height="254" fill="#112418"></rect>
   <g transform="translate(32 79) scale(1.5)">
     <line x1="6" y1="32" x2="58" y2="32" stroke="#f3f0e8" stroke-width="1.25" stroke-linecap="round"></line>
     <line x1="32" y1="32" x2="32" y2="10" stroke="#f3f0e8" stroke-width="1.5" stroke-linecap="round"></line>
@@ -26,7 +26,7 @@
   <text x="172" y="142" font-size="64" font-weight="500" letter-spacing="-0.04em" fill="#f3f0e8">mori</text>
   <g transform="translate(172, 178)">
     <circle cx="0" cy="0" r="3" fill="#c89a3a"></circle>
-    <text x="12" y="3" font-size="12" letter-spacing="0.12em" fill="rgba(243,240,232,0.7)">A SHARED MEMORY LAYER FOR AI CODING AGENTS</text>
+    <text x="12" y="3" font-size="12" letter-spacing="0.12em" fill="rgba(243,240,232,0.7)">A GOVERNED SHARED MEMORY LAYER FOR AI CODING AGENTS</text>
   </g>
   <text x="876" y="34" text-anchor="end" font-size="10" letter-spacing="0.16em" fill="rgba(243,240,232,0.7)">森 · FOREST</text>
 </svg>
