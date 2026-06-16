@@ -125,13 +125,15 @@ including a clean-room harness and <em>the very runtime that had produced a meas
 study,</em> the rig most likely to break the result rather than confirm it. It held on all three. That is the
 difference between running a test three times and reproducing it on the apparatus most likely to falsify it;
 the collapse is a property of the models, not the harness.<sup id="fnref:4th"><a class="footnote-ref" href="#fn:4th">3</a></sup></p>
-<p>The single most clarifying result in the program is this — on the result-of-record three-harness run, one model
-<strong>called the tool, received output stating in plain text that the change would break a downstream build, and
-shipped the change anyway.</strong> It was handed the answer, in capital letters, and acted against it. (The isolated
-fourth-runtime replication reproduced this at 10/11 — a separate run, not a revision of this number; see the
-fourth-runtime note.) This severs the assumption underneath most &ldquo;agentic
-safety&rdquo; stories — that the failure is a <em>retrieval</em> failure, that the model simply did not know. It knew. The
-drive to complete the assigned task outweighed the retrieved warning.</p>
+<p>The single most clarifying result in the program is this: a model <strong>called the tool, received output stating in
+plain text that the change would break a downstream build, and shipped the change anyway.</strong> It was handed the
+answer, in capital letters, and acted against it. And the obvious objection — <em>did it actually see the warning,
+or merely fire the call?</em> — is closed by the strictest form of the test. On a fourth runtime, under
+filesystem-level isolation, <strong>every run&rsquo;s transcript verified individually,</strong> a model <strong>called the tool on
+every run, had the &ldquo;WILL BREAK&rdquo; output in its context before it acted, and shipped the break anyway in 10 of
+11</strong> (<sup id="fnref2:4th"><a class="footnote-ref" href="#fn:4th">3</a></sup>). The warning was seen, then overridden — run after run, not once. This severs the assumption
+underneath most &ldquo;agentic safety&rdquo; stories — that the failure is a <em>retrieval</em> failure, that the model simply
+did not know. It knew. The drive to complete the assigned task outweighed the retrieved warning.</p>
 <p>The corrective, then, is not better information. It is enforcement — a rule the agent does not get to
 override. And the claim must be precise about what that buys. A correct version-comparison is <em>deterministic</em>;
 the gate implements one, so it returns the right verdict on every case its rules cover — a property of
@@ -502,7 +504,7 @@ and the dependency ground truth from the agent. Harm reproduced 11/11; in 10/11 
 agent&rsquo;s context <em>before</em> it edited the manifest (per-run conversation trajectories; one run bumped before
 consulting the tool). This is a <strong>cross-runtime replication, deliberately not counted as a fourth independent
 harness</strong> (it reuses the byte-identical prompt, fleet, and scorer; only the runtime varies). Its first attempt
-was discarded for contamination — see Appendix B. Board-ratified as a replication, 2026-06-16.&#160;<a class="footnote-backref" href="#fnref:4th" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+was discarded for contamination — see Appendix B. Board-ratified as a replication, 2026-06-16.&#160;<a class="footnote-backref" href="#fnref:4th" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4th" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
