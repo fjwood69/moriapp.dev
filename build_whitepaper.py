@@ -47,6 +47,8 @@ header.hero{padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--border);margin
 header.hero .kicker{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:1.25rem;}
 header.hero h1{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem;}
 header.hero .sub{font-size:1.1rem;color:var(--text-muted);max-width:36em;}
+header.hero .byline{margin:.25rem 0 1.5rem;font-size:1rem;color:var(--text-muted);}
+header.hero .byline strong{color:var(--text);font-weight:500;}
 h2{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;line-height:1.25;color:var(--text);margin:3.5rem 0 1.25rem;padding-top:1rem;border-top:1px solid var(--border);}
 article > h2:first-of-type{border-top:none;}
 h3{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:1.25rem;color:var(--text);margin:2rem 0 .75rem;}
@@ -108,6 +110,9 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 <meta property="og:image" content="https://moriapp.dev/assets/whitepaper-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="article:author" content="Fred Wood">
+<meta property="article:published_time" content="2026-06-16">
+<meta name="author" content="Fred Wood">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Deterministic Boundaries for Non-Deterministic Agents">
 <meta name="twitter:description" content="A pre-registered benchmark of AI coding agents — every result checked against the code, including the nulls and retractions.">
@@ -126,6 +131,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 <header class="hero">
   <div class="kicker">Whitepaper</div>
   <h1>Deterministic Boundaries for Non-Deterministic Agents</h1>
+  <p class="byline"><strong>Fred Wood</strong> — 25 years in financial-services infrastructure. Mori is an independent project.</p>
   <p class="sub">Why information doesn't bind AI coding-agent behaviour — and what does. A pre-registered
   benchmark, every result checked against the code, including the ones that didn't survive.</p>
 </header>
