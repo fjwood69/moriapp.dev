@@ -9,12 +9,12 @@
 <meta property="og:description" content="Seven model families, three independent harnesses, every result checked against the code — including the nulls and every retraction.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://moriapp.dev/whitepaper">
-<meta name="theme-color" content="#0d1117">
+<meta name="theme-color" content="#fbfbf9">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>森</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-<style>:root{--bg:#0d1117;--surface:#161b22;--border:#21262d;--text:#e6edf3;--text-muted:#8b949e;--text-faint:#6e7681;--green:#52b788;--green-deep:#1b4332;--green-faint:rgba(82,183,136,.3);--green-wash:rgba(27,67,50,.12);--row-hover:rgba(255,255,255,.02);}
+<style>:root{--bg:#fbfbf9;--surface:#f0f0ec;--border:#e3e3dd;--text:#14241a;--text-muted:#46514c;--text-faint:#8a8f8a;--green:#2d6a4f;--green-deep:#1b4332;--green-faint:rgba(45,106,79,.3);--green-wash:rgba(45,106,79,.06);--row-hover:rgba(0,0,0,.02);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text-muted);font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.8;font-weight:300;-webkit-font-smoothing:antialiased;}
@@ -58,8 +58,8 @@ footer.site a{color:var(--text-muted);}
 .wp-banner{padding:2.25rem 0 1.5rem;text-align:center;}.wp-banner img{height:84px;width:auto;max-width:92%;border-radius:10px;}</style>
 </head>
 <body>
-<div class="wp-banner"><a href="/"><img src="assets/header-dark.svg" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
-<div class="topbar"><div class="wrap"><a href="/">← back to moriapp.dev</a><a href="/whitepaper-light">See light version →</a></div></div>
+<div class="wp-banner"><a href="/"><img src="/assets/header.svg" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
+<div class="topbar"><div class="wrap"><a href="/">← back to moriapp.dev</a><a href="/whitepaper">See dark version →</a></div></div>
 <div class="wrap">
 <header class="hero">
   <div class="kicker">Whitepaper</div>
@@ -71,7 +71,7 @@ footer.site a{color:var(--text-muted);}
 <p><strong>Mori is open source (AGPL-3.0): <a href="https://github.com/fjwood69/mori">github.com/fjwood69/mori</a>.</strong> Bring your
 own agent; the knowledge — and the boundaries — outlive it.</p>
 <hr />
-<h2 id="1-you-cannot-pick-or-predict-a-safe-coding-agent">1. You cannot pick or predict a safe coding agent</h2><figure class="wp-fig"><img src="assets/figure-13-the-arc.svg" alt="The five-step spine: Memory → Curation → Governance → Insurance → Unpredictability." loading="lazy"><figcaption>The five-step spine: Memory → Curation → Governance → Insurance → Unpredictability.</figcaption></figure>
+<h2 id="1-you-cannot-pick-or-predict-a-safe-coding-agent">1. You cannot pick or predict a safe coding agent</h2><figure class="wp-fig"><img src="/assets/figure-13-the-arc.svg" alt="The five-step spine: Memory → Curation → Governance → Insurance → Unpredictability." loading="lazy"><figcaption>The five-step spine: Memory → Curation → Governance → Insurance → Unpredictability.</figcaption></figure>
 <p>The enterprise instinct for safe AI-assisted coding is procurement: buy the most capable agent and trust that
 capability buys reliability. It does not.</p>
 <p>A pre-registered benchmark of seven model families — run on two independent harnesses (the enforcement study
@@ -126,7 +126,7 @@ deterministic code, not an empirical success rate that generalises to inputs the
 handed the same pre-computed comparison, the deterministic check acts on it and the model does not. An agent
 reading a warning is probabilistic; a check of that same warning is boolean. Tool access is not enforcement.</p>
 <hr />
-<h2 id="3-caution-is-not-a-free-fallback">3. Caution is not a free fallback</h2><figure class="wp-fig"><img src="assets/figure-11-governed-playbooks-flow.svg" alt="A governed playbook run, step by step." loading="lazy"><figcaption>A governed playbook run, step by step. <span class="guard">Architecture — built and benchmarked, not a shipped product surface.</span></figcaption></figure>
+<h2 id="3-caution-is-not-a-free-fallback">3. Caution is not a free fallback</h2><figure class="wp-fig"><img src="/assets/figure-11-governed-playbooks-flow.svg" alt="A governed playbook run, step by step." loading="lazy"><figcaption>A governed playbook run, step by step. <span class="guard">Architecture — built and benchmarked, not a shipped product surface.</span></figcaption></figure>
 <p>The second assumption is the natural retreat from the first: if information alone will not bind behaviour,
 instruct the behaviour directly — tell the agent to be careful.</p>
 <p>This is the strategy of the system prompt (&ldquo;do not ship a breaking change if downstream consumers are not
@@ -173,7 +173,7 @@ it lives</em>, not yet a <em>measurement</em> of how often real organisational g
 independently-authored version is the stronger form, and it is named here as the next experiment — not a claim
 made now.</p>
 <hr />
-<h2 id="5-where-mori-sits-how-it-changes-the-outcome">5. Where Mori sits — how it changes the outcome</h2><figure class="wp-fig"><img src="assets/figure-10-governed-playbooks-spectrum.svg" alt="The governance spectrum: blast-radius × machine-checkability; the authority↔advisor dial." loading="lazy"><figcaption>The governance spectrum: blast-radius × machine-checkability; the authority↔advisor dial. <span class="guard">Architecture — built and benchmarked, not a shipped product surface.</span></figcaption></figure><figure class="wp-fig"><img src="assets/figure-12-day-in-the-life.svg" alt="A day with Mori — the layers in use." loading="lazy"><figcaption>A day with Mori — the layers in use. <span class="guard">Scenario figures (~80% / ~3h) are illustrative, not cited.</span></figcaption></figure>
+<h2 id="5-where-mori-sits-how-it-changes-the-outcome">5. Where Mori sits — how it changes the outcome</h2><figure class="wp-fig"><img src="/assets/figure-10-governed-playbooks-spectrum.svg" alt="The governance spectrum: blast-radius × machine-checkability; the authority↔advisor dial." loading="lazy"><figcaption>The governance spectrum: blast-radius × machine-checkability; the authority↔advisor dial. <span class="guard">Architecture — built and benchmarked, not a shipped product surface.</span></figcaption></figure><figure class="wp-fig"><img src="/assets/figure-12-day-in-the-life.svg" alt="A day with Mori — the layers in use." loading="lazy"><figcaption>A day with Mori — the layers in use. <span class="guard">Scenario figures (~80% / ~3h) are illustrative, not cited.</span></figcaption></figure>
 <p>Everything so far is a problem statement: agent behaviour is unpredictable in principle (§1); the two intuitive
 fixes — give it the facts, tell it to be careful — fail, one into broken builds and one into paralysis (§2–3);
 and the only thing that holds is a deterministic rule outside the model, which is exactly as good as the

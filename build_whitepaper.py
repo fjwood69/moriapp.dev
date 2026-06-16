@@ -26,7 +26,7 @@ DAY = ('figure-12-day-in-the-life.svg', 'A day with Mori — the layers in use.'
 
 def fig_html(fname, alt, guard):
     cap = f'<figcaption>{alt}' + (f' <span class="guard">{guard}</span>' if guard else '') + '</figcaption>'
-    return f'<figure class="wp-fig"><img src="assets/{fname}" alt="{alt}" loading="lazy">{cap}</figure>'
+    return f'<figure class="wp-fig"><img src="/assets/{fname}" alt="{alt}" loading="lazy">{cap}</figure>'
 
 for key, (fname, alt, guard) in FIGS.items():
     pat = re.compile(r'(<h2[^>]*>[^<]*' + re.escape(key) + r'[^<]*</h2>)')
@@ -78,9 +78,9 @@ footer.site a{color:var(--text-muted);}
 """
 
 THEMES = {
- "whitepaper.html":       ("DARK",  "/whitepaper-light", "See light version →", "#0d1117", "header-dark.svg",
+ "whitepaper/index.html": ("DARK",  "/whitepaper/light", "See light version →", "#0d1117", "header-dark.svg",
    "--bg:#0d1117;--surface:#161b22;--border:#21262d;--text:#e6edf3;--text-muted:#8b949e;--text-faint:#6e7681;--green:#52b788;--green-deep:#1b4332;--green-faint:rgba(82,183,136,.3);--green-wash:rgba(27,67,50,.12);--row-hover:rgba(255,255,255,.02);"),
- "whitepaper-light.html": ("LIGHT", "/whitepaper",       "See dark version →",  "#fbfbf9", "header.svg",
+ "whitepaper/light.html": ("LIGHT", "/whitepaper",       "See dark version →",  "#fbfbf9", "header.svg",
    "--bg:#fbfbf9;--surface:#f0f0ec;--border:#e3e3dd;--text:#14241a;--text-muted:#46514c;--text-faint:#8a8f8a;--green:#2d6a4f;--green-deep:#1b4332;--green-faint:rgba(45,106,79,.3);--green-wash:rgba(45,106,79,.06);--row-hover:rgba(0,0,0,.02);"),
 }
 # each theme uses its matching banner (it carries its own background), shown as a centred card.
@@ -107,7 +107,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 <style>{css}</style>
 </head>
 <body>
-<div class="wp-banner"><a href="/"><img src="assets/{banner}" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
+<div class="wp-banner"><a href="/"><img src="/assets/{banner}" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
 <div class="topbar"><div class="wrap"><a href="/">← back to moriapp.dev</a><a href="{toggle_href}">{toggle_text}</a></div></div>
 <div class="wrap">
 <header class="hero">
@@ -127,7 +127,9 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 </body>
 </html>
 """
-    open(os.path.join(HERE, fname), "w", encoding="utf-8").write(html)
+    outpath = os.path.join(HERE, fname)
+    os.makedirs(os.path.dirname(outpath), exist_ok=True)
+    open(outpath, "w", encoding="utf-8").write(html)
     print(f"wrote {fname} ({len(html)} bytes) — {label} + banner, "
           f"figs={sum(f'assets/{f}' in html for f in ['figure-13-the-arc.svg','figure-11-governed-playbooks-flow.svg','figure-10-governed-playbooks-spectrum.svg','figure-12-day-in-the-life.svg'])}/4, "
           f"tables={html.count('<table>')}")
