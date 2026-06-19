@@ -204,12 +204,18 @@ each answering a different failure above.</p>
 <p><strong>Retrieval — what the agent knows.</strong> The base layer is shared memory: durable knowledge distilled from one
 agent&rsquo;s sessions and surfaced to the next. Ungated, that memory is its own hazard — a fact true in one
 repository, surfaced while the agent works another, makes it confidently reach for an interface that does not
-exist there. In a cross-repository stress test — with the unscoped condition deliberately built as a worst
-case, feeding the agent the wrong-scope memory most able to mislead — unscoped memory drove agents to chase
-phantom APIs in every run; provenance-scoped memory — knowledge routed to where it is actually valid — drove
-that to zero, across two independent frontier models. <strong>This layer ships today.</strong> What it is <em>shown</em> to do is
-keep shared memory from becoming a hazard — not &ldquo;raise the baseline,&rdquo; which would be the productivity claim the
-evidence below retracts.</p>
+exist there. In a cross-repository stress test — with the unscoped condition deliberately built as a worst case, seeded
+with the wrong-scope memory most able to mislead — the result resolves into three distinct levels. <strong>Delivery:</strong>
+the wrong-repo API names reached the agent&rsquo;s context in every unscoped run and in none of the scoped runs
+(100% → 0%, replicated across two independent frontier models) — provenance scoping is a proven control over
+<em>what reaches the agent</em>. <strong>Engagement:</strong> in 13 of 20 unscoped runs the agent then <em>processed</em> the delivered
+poison — overwhelmingly by grepping the live codebase for the named API, finding it absent, and rejecting it
+(one run drafted it and the compiler caught it; one named it only in a comment). <strong>Commit:</strong> the phantom API
+reached the agent&rsquo;s final code in 0 of 20 unscoped runs (and 0 of 60 scoped), with 18 of 20 completing the task
+correctly. So the delivered poison was <em>seen and refused</em>, not merely filtered: when the truth is locally
+checkable, capable agents verify and reject wrong-origin memory on their own. <strong>This layer ships today</strong>, and
+what it is proven to do is control delivery; its single-shot <em>harm-avoidance</em> benefit is null on this verifiable
+public-API fleet — the agents already do that job.<sup id="fnref:harm"><a class="footnote-ref" href="#fn:harm">1</a></sup></p>
 <p><strong>Advisory — what the agent is told.</strong> The middle layer is guidance in the prompt: the curated rule, surfaced
 at the right moment. It is cheap and it helps — but §§2–3 are its ceiling. A rule the model can read is a rule
 the model can ignore (§2), and a rule without the facts to apply it becomes paralysis (§3). Advisory is
@@ -223,20 +229,31 @@ built and benchmarked; it is not yet a shipped product surface, and this paper d
 is its real boundary. A playbook covers a class of change someone has chosen to encode; the bulk of an agent&rsquo;s
 work has none, so the gate has nothing to check. What sits under that work is the memory layer — curated,
 provenance-scoped canon — and its evidence must be stated exactly, because it is <em>not</em> what intuition expects.
-The memory layer&rsquo;s <em>proven</em> contribution is <strong>harm-avoidance, not acceleration</strong>: unscoped memory drove agents
-to reach for APIs that do not exist in the repository they were working (every run, two frontier models);
-provenance scoping drove that to zero.<sup id="fnref:harm"><a class="footnote-ref" href="#fn:harm">1</a></sup> That is the cross-contamination result, and it is real. What the
+The memory layer&rsquo;s <em>proven</em> contribution is <strong>delivery-control, not acceleration and not — on this evidence —
+harm-avoidance</strong>: provenance scoping removes out-of-scope content from the agent&rsquo;s context completely (every
+unscoped run, no scoped run). What it does <em>not</em> demonstrate is harm-avoidance — because on this fleet there was
+no harm to avoid: the agents grepped the delivered poison against the live codebase, found it false, and kept it
+out of committed code on their own (0 of 20 runs; 18 of 20 completed correctly). The cross-contamination
+<em>delivery</em> result is real; the cross-contamination <em>harm</em> result is null here, and is reported as such.<sup id="fnref2:harm"><a class="footnote-ref" href="#fn:harm">1</a></sup> What the
 evidence does <em>not</em> support is that curated memory makes day-to-day work faster or better — a pre-registered,
 powered test of precisely that returned a <strong>null</strong><sup id="fnref:null"><a class="footnote-ref" href="#fn:null">2</a></sup>: a human-curated brief did not accelerate the compounding
 curve over keeping everything, and on a second repository the curation advantage reversed. The null is
-published in place of the hint that preceded it. So the honest account of the everyday is deliberately narrow:
-Mori keeps an agent&rsquo;s shared memory from <em>poisoning</em> it, and surfaces the decisions a human chose to keep —
-<em>influence and harm-avoidance, not a demonstrated productivity gain</em>. The single place Mori has <em>shown</em> it
-changes an agent&rsquo;s behaviour on a dangerous decision is the binding gate. Read the architecture, then, as a
-ladder whose rungs carry <strong>different weights of evidence</strong>: provenance (proven harm-avoidance, shipped),
-curated advisory (plausible, productivity-unproven), and the binding gate (proven enforcement on a dangerous
-decision, built). The governance spectrum maps where each rung applies; the discipline of the paper is to let no rung claim
-more than its evidence allows. (None of this is in tension with §§2–3: advice was shown insufficient as a
+published in place of the hint that preceded it. So the honest account of the everyday is deliberately narrow, and narrower than
+an earlier draft claimed: Mori removes out-of-scope memory from the agent&rsquo;s context (proven), and surfaces the
+decisions a human chose to keep — but it has <em>not</em> shown that doing so changes what the agent does, because
+capable agents rejected the out-of-scope content on their own. The single place Mori has <em>shown</em> it changes an
+agent&rsquo;s behaviour on a dangerous decision is the binding gate. Read the architecture, then, as a ladder whose
+rungs carry <strong>different weights of evidence</strong>: provenance (proven <em>delivery-control</em>, shipped; harm-avoidance
+unproven — agents self-reject single-shot poison), curated advisory (plausible, productivity-unproven), and the
+binding gate (proven enforcement on a dangerous decision, built). Exactly one rung has demonstrated it changes
+a dangerous decision under controlled conditions — the gate. The governance spectrum maps where each rung
+applies; the discipline of the paper is to let no rung claim more than its evidence allows, and that now
+includes demoting a shipped feature&rsquo;s harm claim to the null it measured. These results are one law, not three
+scattered findings: the trained prior dominates context text, and <em>verifiability</em> decides which way that cuts.
+Where the agent can check the truth — a local, greppable API — it rejects bad memory unaided, which is exactly
+why provenance&rsquo;s single-shot harm benefit is null; where it cannot — a non-local breakage invisible from where
+it works, the §2 case — the prior overrides even a correct warning, which is exactly why a deterministic gate is
+needed. Enforcement is required precisely where verification is impossible, and that is the gate&rsquo;s domain. (None of this is in tension with §§2–3: advice was shown insufficient as a
 substitute for <em>enforcement on a high-stakes, non-local decision</em> — a different claim from everyday alignment,
 which the evidence simply does not adjudicate either way.)</p>
 <p>The experiments separate the gate&rsquo;s value into two parts. The first is <strong>delivery- and obedience-independence</strong>:
@@ -254,8 +271,10 @@ posed as a problem in §1, answered as an architecture here.</p>
 <h2 id="6-the-retraction-log-and-how-the-benchmark-corrected-itself">6. The retraction log — and how the benchmark corrected itself</h2>
 <p>The numbers above are only as trustworthy as the process that produced them, and that process&rsquo;s most
 load-bearing feature is its record of self-correction. Across these studies the program produced false
-headlines and falsified them <em>before</em> publication — each killed by a rule written down <em>before</em> the result was
-known, each replaced in the record by the result that rule forced. Stated plainly:</p>
+headlines and falsified them — most <em>before</em> publication, and two, including one introduced in this very
+revision, <em>after</em> it, when the same guards were turned on the already-published work. Each was killed by a rule
+written down <em>before</em> the result was known, and replaced in the record by the result that rule forced. Stated
+plainly:</p>
 <ul>
 <li><strong>A contaminated benchmark run, caught live — the clearest case of why this matters.</strong> A replication on a
   fourth agent runtime was first driven by a single orchestrator agent that had been handed the experiment&rsquo;s
@@ -284,11 +303,28 @@ known, each replaced in the record by the result that rule forced. Stated plainl
   the null published in its place.</li>
 <li><strong>A figure&rsquo;s mechanism — corrected.</strong> A diagram depicted a just-in-time memory pull the product does not
   ship. It was caught and removed before this draft.</li>
+<li><strong>The provenance harm headline — narrowed to a three-level result, after publication.</strong> Version 1.0 published
+  &ldquo;phantom-API attempts 20/20 unscoped vs 0/60 scoped&rdquo; as behavioural harm-avoidance. The
+  <em>attribute-to-the-decision-not-the-delivery</em> rule, applied to the live paper, exposed that the scorer had
+  counted <strong>context-presence</strong> — the poison sat in the injected brief, which the whole-transcript regex read —
+  and labelled it &ldquo;attempts.&rdquo; Re-scored on what the agent actually <em>wrote</em>, the result is a ladder: delivery
+  100%→0% (proven control over what reaches the agent), engagement 13/20→0/60 (the agent greps the live codebase
+  for the named API, finds it absent, and rejects it), commit <strong>0/20→0/60</strong> (it never reaches code; 18/20
+  complete correctly). Delivery-control proven; single-shot harm-avoidance null. Corrected in §5 and this footnote.</li>
+<li><strong>The correction&rsquo;s own basis was a bug — caught by the validation gate, before git.</strong> The decision-level
+  re-score meant to demote the harm claim returned a clean <code>0/0 written-code</code> — a <em>false null</em>, produced by a
+  path bug that made the scorer silently return zero on a mis-built path. A validation gate adopted <em>before</em> the
+  re-score was trusted — adversarial positive control across every write form, a full-delta audit of all twenty
+  runs, and an independent on-disk artifact scorer — caught it before it shipped; called correctly the scorer
+  returns the 13/20 engagement above. This is the program&rsquo;s sharpest case: a guard caught a wrong published
+  claim, and a second guard caught the <em>correction</em> being wrong on its own terms.</li>
 </ul>
-<p>None of these survived to publication, because each was caught by a guard set before the answer was known. A
-benchmark with no retraction log has either gotten everything right the first time or is not looking hard
-enough. This one publishes its corrections as the evidence that the surviving numbers were checked the same
-way. The full candidate-by-candidate falsification log — including the findings that died — is Appendix B.</p>
+<p>Most were caught before publication; two survived into the published v1.0 and were corrected here, caught by the
+same guards applied to the live paper — one of them a correction whose own basis was a bug the validation gate
+caught before it shipped. A benchmark with no retraction log has either gotten everything right the first time
+or is not looking hard enough. This one publishes its corrections — including the ones it had to make to its own
+corrections — as the evidence that the surviving numbers were checked the same way. The full
+candidate-by-candidate falsification log — including the findings that died — is Appendix B.</p>
 <hr />
 <h2 id="7-whats-next-the-experiments-these-results-make-necessary">7. What&rsquo;s next — the experiments these results make necessary</h2>
 <p>Every limit named above is a question, not a wall. The discipline that produced these findings also produces a
@@ -310,10 +346,10 @@ That experiment is gated on those signals shipping.</p>
 <em>decision</em> — eligible or not. The governed-playbook <em>execution</em> engine (per-phase tests, halt, rollback, audit)
 is built and unit-tested but not yet benchmarked end-to-end. Once it is a shipped surface, the next benchmark
 asks whether governed execution holds in practice the way the eligibility gate held in principle.</p>
-<p><strong>Measure mid-session provenance before shipping it.</strong> Provenance scoping is proven at session start; whether
-re-grounding scoped canon mid-session (on a context shift or a repository crossing) avoids harm without cost is
-a roadmap item to be <em>measured, not assumed</em> — and explicitly not the just-in-time productivity mechanism this
-paper already retracted.</p>
+<p><strong>Measure mid-session provenance before shipping it.</strong> Provenance scoping&rsquo;s <em>delivery</em> control is proven at
+session start; whether re-grounding scoped canon mid-session (on a context shift or a repository crossing)
+holds without cost is a roadmap item to be <em>measured, not assumed</em> — and explicitly not the just-in-time
+productivity mechanism this paper already retracted.</p>
 <p>The roadmap is therefore the limitations read forward. The gate is built and benchmarked today; the work named
 here is what turns it from a validated principle into a shipped, richer-fed, broadly-tested surface. None of it
 is claimed as done — which is the only reason the rest of the paper can be trusted.</p>
@@ -398,6 +434,16 @@ caught it. The point is not that these were avoided but that they were <em>caugh
 <td>recount from transcripts; the old phrasing double-counted the numerator and mis-stated the scoped denominator</td>
 </tr>
 <tr>
+<td>Provenance &ldquo;phantom-API attempts 20/20 unscoped vs 0/60 scoped&rdquo; implied behavioural harm-avoidance</td>
+<td><strong>corrected / narrowed to a three-level ladder; commit-level harm null</strong></td>
+<td><code>analyze3.py</code> counted context-<em>presence</em> via whole-file regex, mislabelled &ldquo;attempts&rdquo;. Re-validated into delivery 20/20→0/60 (proven), engagement 13/20→0/60 (grep-and-reject, observed run-by-run), commit 0/20→0/60 on the on-disk artifacts (18/20 correct). Delivery-control proven; single-shot harm null. Caught by <em>attribute-to-the-decision-not-the-delivery</em></td>
+</tr>
+<tr>
+<td>The decision-level re-score that would have demoted it returned a clean <code>0/0 written-code</code> null</td>
+<td><strong>caught before it shipped — during the v1.0 revision</strong></td>
+<td>the re-scorer (<code>phantom_decided.py</code>) re-derived its runs-root and silently returned <code>0</code> on file-not-found (a path bug); called correctly it returns the 13/20 engagement. Caught by the ratified <strong>validation gate</strong> (adversarial positive control + full-delta audit of all 20 + an independent on-disk artifact scorer). The standing rule&rsquo;s first save: a correction&rsquo;s own basis was wrong, and the gate caught it before git</td>
+</tr>
+<tr>
 <td>A figure depicting a just-in-time memory pull</td>
 <td><strong>removed</strong></td>
 <td>the mechanism does not ship</td>
@@ -475,19 +521,35 @@ large raw transcript trees and any auth-adjacent run-config directories.</p>
 <hr />
 <ol>
 <li id="fn:harm">
-<p><strong>Provenance harm-avoidance (cross-contamination).</strong> Pre-registered MiniMax-M3, 2×2 scope×delivery
-(unscoped = scope-all titles+bodies, 20 runs; scoped = scope-safe titles+bodies, 60 runs after powering the
-safe column to n=30/cell). The unscoped arm is an <strong>adversarial worst-case construction</strong> — the seed canon is
-origin-bound memory engineered to be maximally wrong for the working repo — so 20/20 is &ldquo;what deliberately
-mis-scoped memory does,&rdquo; not a default base rate; the load-bearing claim is that scoping drives it to zero.
-Phantom-API attempts (the transcript invokes a non-existent, wrong-repo API)
-<strong>20/20 under unscoped memory vs 0/60 under provenance scoping</strong> (Fisher <em>p</em> ≈ 0; perfect separation, identical
-whether the out-of-scope memory was delivered as titles or full bodies — each unscoped cell 10/10, each scoped
-cell 0/30). Replicated <strong>model-independently</strong> on a second family — MiMo V2.5 Pro, 10/10 → 0/10, Fisher
-<em>p</em> ≈ 1.1×10⁻⁵. <em>Influence
-mechanism:</em> the wrong-scope memory&rsquo;s <strong>title</strong> is the trigger; the fix is zero-knowledge of out-of-scope canon,
-not body-hiding. Analysis: <code>assessments/provenance-scope-2x2-n30-2026-06-14.md</code>,
-<code>brief-for-board-provenance-mvp.md</code>. Raw: archived run tree (transfer/provenance run data).&#160;<a class="footnote-backref" href="#fnref:harm" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><strong>Provenance: delivery-control proven; single-shot harm null on a verifiable fleet.</strong> Pre-registered
+MiniMax-M3, 2×2 scope×delivery (unscoped = scope-all, 20 runs; scoped = scope-safe, 60 runs after powering the
+safe column to n=30/cell); the unscoped arm is an <strong>adversarial worst-case construction</strong> — origin-bound seed
+canon engineered to be maximally wrong for the working repo. The result resolves into three levels, scored after
+re-validation. <strong>Delivery</strong> (did the wrong-repo API names reach the agent&rsquo;s context?): present 100% unscoped
+(20/20), 0% scoped (0/60) — perfect separation, identical for titles or bodies; replicated model-independently
+on MiMo V2.5 Pro (10/10 → 0/10). Real but, for the unscoped arm, <strong>tautological</strong> (the brief carried the names);
+the load-bearing half is the 0% scoped. <strong>Engagement</strong> (did the poison appear in the agent&rsquo;s <em>own</em> tool-use
+inputs or reasoning?): 13/20 unscoped, 0/60 scoped. Audited run-by-run: 11/13 grep-and-reject (the agent
+searches the live codebase for the named API, finds it absent, rejects it), 1/13 names it in code comments only,
+1/13 drafts it and the compiler catches it (<code>undefined: BaseInline</code>) before final. This is the <em>mechanism</em>, not
+harm — the agent verifying and refusing delivered poison. <strong>Commit</strong> (did the agent <em>write</em> the phantom into
+final code?): 0% in both arms (0/20 unscoped, 0/60 scoped), scored on the on-disk <code>.go</code> artifacts the agent
+wrote; 18/20 unscoped completed the task correctly (real-API implementation passing the gate), and the 2
+failures had zero poison engagement. <strong>Two corrections of record.</strong> (i) The original published headline
+(<code>20/20 vs 0/60</code>) came from a matcher (<code>analyze3.py</code>) that ran a regex over the <em>entire</em> transcript with no
+role-slicing — measuring context-presence while labelling it <code>PHANTOM-API-attempts</code>, which implies invocation;
+that number is <em>delivery</em>, not harm. (ii) A first decision-level re-score (<code>phantom_decided.py</code>) appeared to
+give 0 written-code in both arms — but that scorer had a <strong>path bug</strong> (it re-derived its runs-root and silently
+returned 0 on file-not-found); called correctly it returns the 13/20 engagement above. The harm-null was nearly
+published on a false zero; the pre-registered <strong>validation gate</strong> — adversarial positive control across every
+write form, a full-delta audit of all 20 unscoped artifacts, and an independent on-disk artifact scorer — caught
+it (Appendix B). Scorer-of-record is therefore the <strong>artifact</strong> method; engagement is reported, not hidden. Both
+catches are instances of the <em>attribute-to-the-decision-not-the-delivery</em> law (Appendix A), the same law that
+inverted §2. <strong>Residual limitation:</strong> the artifact scorer detects named-phantom adoption and task-level semantic
+failure (the latter caught by the passing gate); it does not measure subtler design degradation that still
+passes the test — a deeper harm definition deferred to the §7 unverifiable-origin experiment. Analysis:
+<code>assessments/provenance-poison-null-chronology-2026-06-19.md</code>, <code>board/2026-06-19-provenance-revalidation.md</code>;
+harness <code>transfer/validate_phantom.py</code>. Raw: archived run tree (transfer/provenance run data).&#160;<a class="footnote-backref" href="#fnref:harm" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:harm" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:null">
 <p><strong>Curation productivity null.</strong> Pre-registered, powered, three-arm (ungated / human-gated /
