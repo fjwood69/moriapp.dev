@@ -73,7 +73,7 @@ sup a,.footnote-ref a{border:none;font-size:.7em;font-weight:500;}
 .footnote-backref:hover{opacity:1;}
 footer.site{border-top:1px solid var(--border);margin-top:4rem;padding:2.5rem 0 4rem;font-size:.9rem;color:var(--text-faint);}
 footer.site a{color:var(--text-muted);}
-.wp-banner{padding:2.25rem 0 1.5rem;text-align:center;}.wp-banner img{height:84px;width:auto;max-width:92%;border-radius:10px;}.tbl-wrap{overflow-x:auto;max-width:100%;margin:1.75rem 0;-webkit-overflow-scrolling:touch;}.tbl-wrap table{margin:0;font-size:.8rem;}.tbl-wrap th,.tbl-wrap td{overflow-wrap:anywhere;word-break:break-word;}.tbl-wrap code{word-break:break-all;font-size:.9em;}</style>
+.wp-banner{padding:2.25rem 0 1.5rem;text-align:center;}.wp-banner img{height:84px;width:auto;max-width:92%;border-radius:10px;}.tbl-wide{width:min(94vw,1180px);margin:1.75rem 0 1.75rem 50%;transform:translateX(-50%);overflow-x:auto;-webkit-overflow-scrolling:touch;}.tbl-wide table{margin:0;width:100%;font-size:.82rem;}.tbl-wide th,.tbl-wide td{white-space:normal;}.tbl-wide code{overflow-wrap:anywhere;}</style>
 </head>
 <body>
 <div class="wp-banner"><a href="/"><img src="/assets/header-dark.svg" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
@@ -129,7 +129,7 @@ footer.site a{color:var(--text-muted);}
 <p>I ran it four ways — a synthetic convention under a cost gradient, an arbitrary convention planted in a realistic repository, and a panel of three real conventions (a familiar security rule, a costly structural rule, a costly non-default behaviour), across four models. The result, in one line:</p>
 <p><strong>Stating the rule and saying nothing produce statistically indistinguishable behaviour. Compliance is the model&rsquo;s prior, not the instruction.</strong></p>
 <p>The panel, skip-rate among completions, <code>named</code> vs <code>blind</code> (~20/cell, four models):</p>
-<div class="tbl-wrap"><table>
+<table>
 <thead>
 <tr>
 <th>Convention</th>
@@ -162,7 +162,7 @@ footer.site a{color:var(--text-muted);}
 <td>0% / 21%</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <p>Across all four models and three conventions, named and blind behaviour are statistically indistinguishable in <strong>11 of the 12 model×convention cells</strong>. The single nominal exception (GLM on C4, p = 0.047 uncorrected) does not survive multiple-comparison correction — it is one of roughly twelve tests, Bonferroni puts it at ~0.56 — and it hinges on a single detector-artifact cell that, scored the other way, moves it to p ≈ 0.11. It is reported here rather than suppressed, but it is not an effect. Where the model&rsquo;s prior aligns with the rule (C1, C2), compliance is near-total whether or not the rule is stated — the prompt takes credit for the training data. Where the prior does not align (C4), stating the rule buys nothing: Sonnet 4.6 skipped retry logic roughly half the time <em>with the helper function sitting in the repository and an explicit instruction to use it</em>. A caution on reading the zero cells: they show the instruction is inert there, not that advisory governance succeeded — a convention that coincides with the model&rsquo;s default behaviour is invisible, not enforced.</p>
 <p><strong>Two factors predict violation; the instruction is not one of them.</strong> The prior <em>gates</em>: prior-aligned rules are self-enforced regardless of cost (C2 is expensive and never skipped). Compliance cost <em>scales</em> violation within prior-orthogonal territory. Cost was operationalised as a ladder: the convention required K extra operations beyond what the task itself needed (audit-token writes through a wrapper, K = 0 / 2 / 8) — so each rung is measurably more work on top of the shortest path that finishes the job. The gradients are clean: 0% / 30% / 55% skip on the synthetic ladder (seal 45242051) and 0% / 52% / 55% pooled across four models on the ecological replication (seal 1e14dd) — and at zero cost, agents follow even arbitrary named rules. (The ecological cost bites harder at the middle rung — 52% vs the synthetic 30% at K=2 — a real convention in a real repository erodes faster than the synthetic anchor did.) So: the prior determines <em>whether</em> a rule is at risk; cost determines <em>how fast</em> an at-risk rule erodes. What the stated rule contributes to enforcement, in every cell measured: nothing detectable.</p>
 <figure class="wp-fig"><img src="/assets/figure-lab-6-cost-gradient-urgency.svg" alt="Figure 3 — Cost gradient and the urgency inversion: skip-rate climbs with compliance cost under a calm framing (0/52/55 across the four-model ecological ladder), but flattens under urgency framing (0/0/5); the dangerous case is the calm one." loading="lazy"><figcaption>Figure 3 — Cost gradient and the urgency inversion: skip-rate climbs with compliance cost under a calm framing (0/52/55 across the four-model ecological ladder), but flattens under urgency framing (0/0/5); the dangerous case is the calm one.</figcaption></figure>
@@ -294,7 +294,7 @@ footer.site a{color:var(--text-muted);}
 <hr />
 <h2 id="receipts">Receipts</h2>
 <p><em>Every claim above traces to an experiment. The table below is the index. All figures are computed from the deduplicated canonical run manifests (<code>manifest.canonical.jsonl</code>, one row per run, <code>infra_ok</code> preferred) or, where a result was board/tier3-scored rather than manifest-backed, from the sealed board (rows 1, 1b, so noted). Model identifiers are the exact strings pinned in the manifests (<code>pin_ok</code> verified per run). The four-model ecological panel (rows 10–11) is complete: all 800 cells present and infra_ok; reported rates are among completions, with FAILED/REFUSED cells a distinct, reported outcome (see row 10&rsquo;s per-model counts).</em></p>
-<div class="tbl-wrap"><table>
+<div class="tbl-wide"><table>
 <thead>
 <tr>
 <th>#</th>
