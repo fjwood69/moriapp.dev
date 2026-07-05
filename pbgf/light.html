@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Promotion-Boundary Governance Framework — mori (森)</title>
-<meta name="description" content="What can actually be enforced on an AI coding agent — where, and why. A pre-registered study across four experiments, three harnesses, and four models; every claim checked against run manifests, including the nulls and retractions.">
+<meta name="description" content="What can actually be enforced on an AI coding agent — where, and why. ~5,000 test runs; every claim checked against the manifests, including the ones that didn't survive.">
 <meta property="og:title" content="The Promotion-Boundary Governance Framework">
-<meta property="og:description" content="You cannot govern what a non-deterministic coding agent does; only what its output is allowed to become. Four experiments, every result checked against the code.">
+<meta property="og:description" content="What can actually be enforced on an AI coding agent — where, and why. ~5,000 test runs; every claim checked against the manifests, including the ones that didn't survive.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://moriapp.dev/pbgf">
-<meta property="og:image" content="https://moriapp.dev/assets/whitepaper-card.png">
+<meta property="og:image" content="https://moriapp.dev/assets/pbgf-og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="article:author" content="Fred Wood">
@@ -17,8 +17,8 @@
 <meta name="author" content="Fred Wood">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Promotion-Boundary Governance Framework">
-<meta name="twitter:description" content="Where enforcement on an AI coding agent can bind at all — and where it only informs. Pre-registered, every claim manifest-checked.">
-<meta name="twitter:image" content="https://moriapp.dev/assets/whitepaper-card.png">
+<meta name="twitter:description" content="What can actually be enforced on an AI coding agent — where, and why. ~5,000 test runs; every claim checked against the manifests, including the ones that didn't survive.">
+<meta name="twitter:image" content="https://moriapp.dev/assets/pbgf-og-card.png">
 <meta name="theme-color" content="#fbfbf9">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>森</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,17 +82,19 @@ footer.site a{color:var(--text-muted);}
 <header class="hero">
   <div class="kicker">Framework · July 2026</div>
   <h1>The Promotion-Boundary Governance Framework</h1>
-  <p class="byline"><strong>Fred Wood</strong> — 25 years in financial-services infrastructure. mori is the lab the data came from, not the thing being sold.</p>
-  <p class="sub">What can actually be enforced on an AI coding agent — where, and why. Four experiments, every result checked against the run manifests, including the ones that didn't survive.</p>
+  <p class="byline"><strong>Fred Wood</strong> · July 2026</p>
+  <p class="sub">What can actually be enforced on an AI coding agent — where, and why.</p>
 </header>
 <article>
+<p><em>mori is the lab the data came from, not the thing being sold. Drawn from ~5,000 test runs across 12 models and 8 vendors; every result checked against the run manifests, including the ones that didn&rsquo;t survive.</em></p>
+<hr />
 <p><strong>Scope pin.</strong> Every empirical claim in this document is pinned to specific models on specific dates (see the receipts table). By the framework&rsquo;s own argument, agent behaviour is a property of a model&rsquo;s training, and that property is version-unstable: it can shift across a vendor&rsquo;s model release with no change on your side. Findings here hold for these models as of these dates. The framework&rsquo;s <em>structural</em> claims — where enforcement can bind at all — do not depend on any model&rsquo;s behaviour; that is precisely their point.</p>
 <hr />
 <h2 id="the-findings-up-front">The findings, up front</h2>
 <p><em>Each claim is pinned to models, dates, and run manifests — the receipts table at the end is the index.</em></p>
 <ol>
 <li>
-<p><strong>Stating a rule to a coding agent does not detectably change its behaviour.</strong> Across four experiments, three harnesses, and four models, naming a convention vs. saying nothing produced statistically indistinguishable compliance — in 11 of 12 model×convention cells in the panel, with the lone exception not surviving multiple-comparison correction. Compliance is the model&rsquo;s <em>prior</em> — the behavioural disposition it acquired in training, what it was already going to do — not the instruction.</p>
+<p><strong>Stating a rule to a coding agent does not detectably change its behaviour.</strong> Across four instruction experiments and four models, naming a convention vs. saying nothing produced statistically indistinguishable compliance — in 11 of 12 model×convention cells in the panel, with the lone exception not surviving multiple-comparison correction. Compliance is the model&rsquo;s <em>prior</em> — the behavioural disposition it acquired in training, what it was already going to do — not the instruction.</p>
 </li>
 <li>
 <p><strong>Two factors predict violation; the instruction isn&rsquo;t one of them.</strong> The prior <em>gates</em>: rules the model&rsquo;s training already agrees with are followed for free, told or not. Compliance cost — the extra work a rule demands of the agent, beyond the shortest path that finishes the task — <em>scales</em> violation where the prior doesn&rsquo;t align (0% → 55% skip along a cost ladder). Violations are silent — 79 of 80 were unflagged omissions. And the intuitive third factor inverts: urgency framing <em>reduced</em> skipping; the dangerous case is the calm one.</p>
@@ -293,7 +295,7 @@ footer.site a{color:var(--text-muted);}
 <p>That question is the product. The map is what lets you ask it precisely and grade the answer rigorously.</p>
 <hr />
 <h2 id="receipts">Receipts</h2>
-<p><em>Every claim above traces to an experiment. The table below is the index. All figures are computed from the deduplicated canonical run manifests (<code>manifest.canonical.jsonl</code>, one row per run, <code>infra_ok</code> preferred) or, where a result was board/tier3-scored rather than manifest-backed, from the sealed board (rows 1, 1b, so noted). Model identifiers are the exact strings pinned in the manifests (<code>pin_ok</code> verified per run). The four-model ecological panel (rows 10–11) is complete: all 800 cells present and infra_ok; reported rates are among completions, with FAILED/REFUSED cells a distinct, reported outcome (see row 10&rsquo;s per-model counts).</em></p>
+<p><em>Every claim above traces to an experiment. The table below is the index. All figures are computed from deduplicated canonical run manifests (one row per run, <code>infra_ok</code> preferred) or, where a result was board/tier3-scored rather than manifest-backed, from the sealed board (rows 1, 1b, so noted). Model identifiers are the exact strings pinned in the manifests (<code>pin_ok</code> verified per run). The four-model ecological panel (rows 10–11) is complete: all 800 cells present and infra_ok; reported rates are among completions, with FAILED/REFUSED cells a distinct, reported outcome (see row 10&rsquo;s per-model counts). </em><em>Full run manifests, the runtime detector, and the pre-registration documents are available on request.</em>**</p>
 <div class="tbl-wide"><table>
 <thead>
 <tr>
@@ -332,7 +334,7 @@ footer.site a{color:var(--text-muted);}
 <td>25 (5×5)</td>
 <td>composer-2.5</td>
 <td>2026-06-26</td>
-<td><code>mori/gauntlet/gauntlet_results.json</code></td>
+<td>gauntlet run log</td>
 </tr>
 <tr>
 <td>3</td>
@@ -341,7 +343,7 @@ footer.site a{color:var(--text-muted);}
 <td>25</td>
 <td>Haiku, composer-2.5</td>
 <td>2026-06-26</td>
-<td><code>mori-bench/gate-gauntlet/{results.csv,manifest.jsonl,REPORT.md}</code></td>
+<td>cross-harness gauntlet manifest + report</td>
 </tr>
 <tr>
 <td>4</td>
@@ -359,7 +361,7 @@ footer.site a{color:var(--text-muted);}
 <td>3</td>
 <td>composer-2.5</td>
 <td>2026-06-25</td>
-<td><code>experiments/gate-a4/results-A4-protected.csv</code></td>
+<td>A4 branch-protection run log</td>
 </tr>
 <tr>
 <td>6</td>
@@ -386,7 +388,7 @@ footer.site a{color:var(--text-muted);}
 <td>(results in board doc)</td>
 <td><code>MiniMax-M3[1m]</code>, <code>claude-haiku-4-5-20251001</code></td>
 <td>2026-06-24</td>
-<td><code>experiments/mini-arm-goawk/</code></td>
+<td>binary-trap board + run log</td>
 </tr>
 <tr>
 <td>9</td>
@@ -395,7 +397,7 @@ footer.site a{color:var(--text-muted);}
 <td>240</td>
 <td><code>MiniMax-M3</code>, <code>claude-sonnet-4-6</code>, <code>glm-5.2</code>, <code>claude-haiku-4-5-20251001</code></td>
 <td>2026-06-30 (seal 45242051)</td>
-<td><code>experiments/cost-pressure/results/manifest.jsonl</code></td>
+<td>cost-pressure factorial manifest</td>
 </tr>
 <tr>
 <td>10</td>
@@ -404,7 +406,7 @@ footer.site a{color:var(--text-muted);}
 <td>named 240 cells (228 completions) × 3 K + blind 80 cells (77 completions)</td>
 <td><code>claude-sonnet-4-6</code>, <code>claude-haiku-4-5-20251001</code>, <code>MiniMax-M3</code>, <code>glm-5.2</code></td>
 <td>2026-07-02 (seal 1e14dd)</td>
-<td><code>results-v2/manifest.canonical.jsonl</code></td>
+<td>ecological canonical manifest</td>
 </tr>
 <tr>
 <td>11</td>
@@ -413,7 +415,7 @@ footer.site a{color:var(--text-muted);}
 <td>480 cells (20/cell × 2 arms × 3 conv × 4 models)</td>
 <td><code>claude-sonnet-4-6</code>, <code>claude-haiku-4-5-20251001</code>, <code>MiniMax-M3</code>, <code>glm-5.2</code></td>
 <td>2026-07-03</td>
-<td><code>results-v2/{manifest.canonical.jsonl, manifest-c4.canonical.jsonl}</code></td>
+<td>ecological + C4 canonical manifests</td>
 </tr>
 <tr>
 <td>12</td>
@@ -422,7 +424,7 @@ footer.site a{color:var(--text-muted);}
 <td>~600 runs invalidated</td>
 <td>—</td>
 <td>2026-07-01 (seal 94d22b, withdrawn)</td>
-<td>v1 <code>results/manifest.jsonl</code> + confound <code>seal.txt</code></td>
+<td>v1 run manifest + confound seal</td>
 </tr>
 <tr>
 <td>13</td>
@@ -431,18 +433,20 @@ footer.site a{color:var(--text-muted);}
 <td>10/10 fixtures + 3 pilots</td>
 <td>—</td>
 <td>2026-07-03</td>
-<td><code>panel/c4_runtime.py</code> + <code>panel/test_c4_runtime.py</code></td>
+<td>C4 runtime detector + fixtures</td>
 </tr>
 </tbody>
 </table></div>
 <hr />
 <p><em>mori is the experimental testbed these findings came from, not a product being sold here. The lab produced two things: a memory layer that genuinely helps a cooperative agent recall context, and the empirical map above of what such a layer — and every in-loop mechanism — cannot do. This document is the second one.</em></p>
 <hr />
+<p><em>Fred Wood — 25 years in financial-services infrastructure. <a href="https://www.linkedin.com/in/fjwood/">LinkedIn</a> · <a href="https://github.com/fjwood69/mori/">mori on GitHub</a></em></p>
+<hr />
 <p><strong>Colophon.</strong> This document was written in sustained collaboration with AI assistants — Anthropic&rsquo;s Claude foremost among them — which drafted and revised text, served on the adversarial review board across four hardening rounds alongside other frontier models, and, in a reflexivity I can only note rather than escape, belong to the same class of system the experiments here measure. The division of labour was the one this framework prescribes: the models proposed; I disposed. Every experiment was designed, run, and paid for by me; every figure is computed from the run manifests, not from any model&rsquo;s summary of them; every claim was ratified or struck by the accountable human whose name is on the byline. Where a model&rsquo;s review recommendation was rejected — several were — the rejection and its reason are in the working record. The collaboration also supplied Part 6&rsquo;s cautionary receipt, at my expense. Nothing in this document rests on an agent&rsquo;s self-report, including about its own contribution to it.</p>
 </article>
 <footer class="site">
   <p>mori (森) — a governed shared memory layer for AI coding agents.
-  <a href="/">moriapp.dev</a> · <a href="/whitepaper">whitepaper</a> · <a href="https://github.com/fjwood69/mori">github.com/fjwood69/mori</a> (AGPL-3.0)</p>
+  <a href="/">moriapp.dev</a> · <a href="https://github.com/fjwood69/mori">github.com/fjwood69/mori</a> (AGPL-3.0)</p>
 </footer>
 </div>
 </body>
