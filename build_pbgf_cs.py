@@ -24,6 +24,8 @@ header.hero{padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--border);margin
 header.hero .kicker{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:1.25rem;}
 header.hero h1{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem;}
 header.hero .sub{font-size:1.1rem;color:var(--text-muted);max-width:36em;}
+header.hero .byline{margin:.25rem 0 1.5rem;font-size:1rem;color:var(--text-muted);}
+header.hero .byline strong{color:var(--text);font-weight:500;}
 header.hero .draft-note{margin-top:1.25rem;font-size:.9rem;color:var(--text-muted);font-style:italic;border-left:2px solid var(--green-deep);background:var(--green-wash);padding:.75rem 1rem;border-radius:0 4px 4px 0;}
 h2{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;line-height:1.25;color:var(--text);margin:3.5rem 0 1.25rem;padding-top:1rem;border-top:1px solid var(--border);}
 article > h2:first-of-type{border-top:none;}
@@ -88,6 +90,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 <header class="hero">
   <div class="kicker">Specification · Draft v0.1</div>
   <h1>PBGF Conformance Specification</h1>
+  <p class="byline"><strong>Fred Wood</strong> · July 2026</p>
   <p class="sub">A conformance standard for promotion verdicts on machine-produced code. Defines what a promotion gate must be able to prove for its verdict to be legitimately called governed. It does not define an implementation.</p>
   <p class="draft-note">This is a living draft. Feedback is invited — particularly demonstrated evasions of the requirements in §4, and evidence that any requirement is unsatisfiable in practice. Requirements will be tightened in minor versions on published evidence and loosened only in a major version with documented rationale (§8).</p>
 </header>
@@ -97,6 +100,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 <footer class="site">
   <p>mori (森) — a governed shared memory layer for AI coding agents.
   <a href="/">moriapp.dev</a> · <a href="https://github.com/fjwood69/mori">github.com/fjwood69/mori</a> (AGPL-3.0)</p>
+  <p style="margin-top:.75rem;">Feedback on this specification: <a href="mailto:fredjwood@proton.me">fredjwood@proton.me</a></p>
 </footer>
 </div>
 </body>
