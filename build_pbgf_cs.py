@@ -1,0 +1,108 @@
+#!/usr/bin/env python3
+"""Build pbgf-cs/index.html (dark) + pbgf-cs/light.html (light) from DRAFT.md, styled to match moriapp.dev."""
+import re, markdown, os
+
+SRC = os.path.expanduser("~/dotfiles/docs/mori-planning/pbgf-cs/DRAFT.md")
+HERE = os.path.expanduser("~/moriapp.dev")
+
+md = open(SRC, encoding="utf-8").read()
+# Strip title block — H1, version line, abstract, and opening HR; body starts at §1
+md = md[md.index("## 1. Purpose and scope"):]
+body = markdown.markdown(md, extensions=['extra', 'smarty', 'sane_lists', 'toc'],
+                         extension_configs={'toc': {'permalink': False}})
+
+LAYOUT = """
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text-muted);font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.8;font-weight:300;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem;}
+.topbar{border-bottom:1px solid var(--border);padding:1.1rem 0;display:flex;}
+.topbar .wrap{display:flex;justify-content:space-between;width:100%;}
+.topbar a{color:var(--text-muted);text-decoration:none;font-size:.9rem;}
+.topbar a:hover{color:var(--green);}
+header.hero{padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--border);margin-bottom:3rem;}
+header.hero .kicker{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:1.25rem;}
+header.hero h1{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem;}
+header.hero .sub{font-size:1.1rem;color:var(--text-muted);max-width:36em;}
+header.hero .draft-note{margin-top:1.25rem;font-size:.9rem;color:var(--text-muted);font-style:italic;border-left:2px solid var(--green-deep);background:var(--green-wash);padding:.75rem 1rem;border-radius:0 4px 4px 0;}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;line-height:1.25;color:var(--text);margin:3.5rem 0 1.25rem;padding-top:1rem;border-top:1px solid var(--border);}
+article > h2:first-of-type{border-top:none;}
+h3{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:1.25rem;color:var(--text);margin:2rem 0 .75rem;}
+p{margin-bottom:1.25rem;}
+strong{color:var(--text);font-weight:500;}
+em{color:var(--text);font-style:italic;}
+a{color:var(--green);text-decoration:none;border-bottom:1px solid var(--green-faint);}
+a:hover{border-bottom-color:var(--green);}
+code{font-family:'JetBrains Mono',monospace;font-size:.82em;background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:.1em .35em;color:var(--text-muted);}
+blockquote{border-left:2px solid var(--green-deep);background:var(--green-wash);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 4px 4px 0;}
+blockquote p{margin:0;}
+blockquote strong{color:var(--green);}
+hr{border:none;border-top:1px solid var(--border);margin:3rem 0;}
+table{width:100%;border-collapse:collapse;margin:1.75rem 0;font-size:.9rem;}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top;}
+th{color:var(--text);font-weight:500;border-bottom:1px solid var(--green-deep);}
+tbody tr:hover{background:var(--row-hover);}
+ul,ol{margin:0 0 1.25rem 1.4rem;}
+li{margin-bottom:.5rem;}
+footer.site{border-top:1px solid var(--border);margin-top:4rem;padding:2.5rem 0 4rem;font-size:.9rem;color:var(--text-faint);}
+footer.site a{color:var(--text-muted);}
+"""
+
+THEMES = {
+ "pbgf-cs/index.html": ("DARK",  "/pbgf-cs/light", "See light version →", "#0d1117", "header-dark.svg",
+   "--bg:#0d1117;--surface:#161b22;--border:#21262d;--text:#e6edf3;--text-muted:#8b949e;--text-faint:#6e7681;--green:#52b788;--green-deep:#1b4332;--green-faint:rgba(82,183,136,.3);--green-wash:rgba(27,67,50,.12);--row-hover:rgba(255,255,255,.02);"),
+ "pbgf-cs/light.html": ("LIGHT", "/pbgf-cs",       "See dark version →",  "#fbfbf9", "header.svg",
+   "--bg:#fbfbf9;--surface:#f0f0ec;--border:#e3e3dd;--text:#14241a;--text-muted:#46514c;--text-faint:#8a8f8a;--green:#2d6a4f;--green-deep:#1b4332;--green-faint:rgba(45,106,79,.3);--green-wash:rgba(45,106,79,.06);--row-hover:rgba(0,0,0,.02);"),
+}
+BANNER = '.wp-banner{padding:2.25rem 0 1.5rem;text-align:center;}.wp-banner img{height:84px;width:auto;max-width:92%;border-radius:10px;}'
+
+for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES.items():
+    css = f":root{{{root}}}" + LAYOUT + BANNER
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBGF Conformance Specification — mori (森)</title>
+<meta name="description" content="A conformance standard for promotion verdicts on machine-produced code. Defines what a promotion gate must be able to prove for its verdict to be legitimately called governed.">
+<meta property="og:title" content="PBGF Conformance Specification (PBGF-CS)">
+<meta property="og:description" content="What a promotion gate must be able to prove for its verdict to be legitimately called governed. Draft v0.1 — published for comment.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://moriapp.dev/pbgf-cs">
+<meta property="article:author" content="Fred Wood">
+<meta name="author" content="Fred Wood">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PBGF Conformance Specification (PBGF-CS)">
+<meta name="twitter:description" content="A conformance standard for promotion verdicts on machine-produced code. Draft v0.1.">
+<meta name="theme-color" content="{themecolor}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>森</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>{css}</style>
+</head>
+<body>
+<div class="wp-banner"><a href="/"><img src="/assets/{banner}" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
+<div class="topbar"><div class="wrap"><a href="/">← back to moriapp.dev</a><a href="{toggle_href}">{toggle_text}</a></div></div>
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">Specification · Draft v0.1</div>
+  <h1>PBGF Conformance Specification</h1>
+  <p class="sub">A conformance standard for promotion verdicts on machine-produced code. Defines what a promotion gate must be able to prove for its verdict to be legitimately called governed. It does not define an implementation.</p>
+  <p class="draft-note">This is a living draft. Feedback is invited — particularly demonstrated evasions of the requirements in §4, and evidence that any requirement is unsatisfiable in practice. Requirements will be tightened in minor versions on published evidence and loosened only in a major version with documented rationale (§8).</p>
+</header>
+<article>
+{body}
+</article>
+<footer class="site">
+  <p>mori (森) — a governed shared memory layer for AI coding agents.
+  <a href="/">moriapp.dev</a> · <a href="https://github.com/fjwood69/mori">github.com/fjwood69/mori</a> (AGPL-3.0)</p>
+</footer>
+</div>
+</body>
+</html>
+"""
+    outpath = os.path.join(HERE, fname)
+    os.makedirs(os.path.dirname(outpath), exist_ok=True)
+    open(outpath, "w", encoding="utf-8").write(html)
+    print(f"wrote {fname} ({len(html):,} bytes) — {label}")
