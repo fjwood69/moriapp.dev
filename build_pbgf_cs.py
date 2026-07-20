@@ -98,9 +98,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 {body}
 </article>
 <footer class="site">
-  <p>mori (森) — a governed shared memory layer for AI coding agents.
-  <a href="/">moriapp.dev</a> · <a href="https://github.com/fjwood69/mori">github.com/fjwood69/mori</a> (AGPL-3.0)</p>
-  <p style="margin-top:.75rem;">Feedback on this specification: <a href="mailto:fredjwood@proton.me">fredjwood@proton.me</a></p>
+  <p>Feedback on this specification: <a href="mailto:fredjwood@proton.me">fredjwood@proton.me</a></p>
 </footer>
 </div>
 </body>
