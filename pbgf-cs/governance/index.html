@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBGF-CS governance — mori (森)</title>
+<meta name="description" content="How the PBGF Conformance Specification is versioned, how to propose a change, how disputes are resolved while there is one author, and the stated path out of single-author control.">
+<meta property="og:title" content="PBGF-CS: governance">
+<meta property="og:description" content="A draft specification with one author and one reference implementation. How to propose a change, and the stated trigger for moving out of single-author control.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://moriapp.dev/pbgf-cs/governance">
+<meta property="article:author" content="Fred Wood">
+<meta name="author" content="Fred Wood">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PBGF-CS: governance">
+<meta name="twitter:description" content="How the specification is versioned, how to propose a change, and the path out of single-author control.">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>森</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>:root{--bg:#0d1117;--surface:#161b22;--border:#21262d;--text:#e6edf3;--text-muted:#8b949e;--text-faint:#6e7681;--green:#52b788;--green-deep:#1b4332;--green-faint:rgba(82,183,136,.3);--green-wash:rgba(27,67,50,.12);--row-hover:rgba(255,255,255,.02);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text-muted);font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.8;font-weight:300;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem;}
+.topbar{border-bottom:1px solid var(--border);padding:1.1rem 0;display:flex;}
+.topbar .wrap{display:flex;justify-content:space-between;width:100%;}
+.topbar a{color:var(--text-muted);text-decoration:none;font-size:.9rem;}
+.topbar a:hover{color:var(--green);}
+header.hero{padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--border);margin-bottom:3rem;}
+header.hero .kicker{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:1.25rem;}
+header.hero h1{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem;}
+header.hero .sub{font-size:1.1rem;color:var(--text-muted);max-width:36em;}
+header.hero .byline{margin:.25rem 0 1.5rem;font-size:1rem;color:var(--text-muted);}
+header.hero .byline strong{color:var(--text);font-weight:500;}
+header.hero .draft-note{margin-top:1.25rem;font-size:.9rem;color:var(--text-muted);font-style:italic;border-left:2px solid var(--green-deep);background:var(--green-wash);padding:.75rem 1rem;border-radius:0 4px 4px 0;}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;line-height:1.25;color:var(--text);margin:3.5rem 0 1.25rem;padding-top:1rem;border-top:1px solid var(--border);}
+article > h2:first-of-type{border-top:none;}
+h3{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:1.25rem;color:var(--text);margin:2rem 0 .75rem;}
+p{margin-bottom:1.25rem;}
+strong{color:var(--text);font-weight:500;}
+em{color:var(--text);font-style:italic;}
+a{color:var(--green);text-decoration:none;border-bottom:1px solid var(--green-faint);}
+a:hover{border-bottom-color:var(--green);}
+code{font-family:'JetBrains Mono',monospace;font-size:.82em;background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:.1em .35em;color:var(--text-muted);}
+blockquote{border-left:2px solid var(--green-deep);background:var(--green-wash);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 4px 4px 0;}
+blockquote p{margin:0;}
+blockquote strong{color:var(--green);}
+hr{border:none;border-top:1px solid var(--border);margin:3rem 0;}
+table{width:100%;border-collapse:collapse;margin:1.75rem 0;font-size:.9rem;}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top;}
+th{color:var(--text);font-weight:500;border-bottom:1px solid var(--green-deep);}
+tbody tr:hover{background:var(--row-hover);}
+ul,ol{margin:0 0 1.25rem 1.4rem;}
+li{margin-bottom:.5rem;}
+footer.site{border-top:1px solid var(--border);margin-top:4rem;padding:2.5rem 0 4rem;font-size:.9rem;color:var(--text-faint);}
+footer.site a{color:var(--text-muted);}
+.wp-banner{padding:2.25rem 0 1.5rem;text-align:center;}.wp-banner img{height:84px;width:auto;max-width:92%;border-radius:10px;}</style>
+</head>
+<body>
+<div class="wp-banner"><a href="/"><img src="/assets/header-dark.svg" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
+<div class="topbar"><div class="wrap"><a href="/pbgf-cs">← back to the specification</a><a href="/pbgf-cs/governance/light">See light version →</a></div></div>
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">Specification · Governance v0.1</div>
+  <h1>PBGF-CS: governance</h1>
+  <p class="byline"><strong>Fred Wood</strong> · July 2026</p>
+  <p class="sub">How this specification is versioned, how to propose a change, how disputes are resolved while it has one author, and the stated trigger for moving out of single-author control.</p>
+  <p class="draft-note">The specification and its reference implementation share an author. That circularity is real and this page does not close it — it states the terms under which it would be closed, and makes the current arrangement's limits explicit enough that a failure to honour them is visible.</p>
+</header>
+<article>
+<h2 id="status-stated-plainly">Status, stated plainly</h2>
+<p>PBGF-CS is a <strong>draft conformance specification with one author and one reference implementation.</strong> It has no independent governance body, no standards-body process, and no second implementer. The reference implementation is currently <strong>below Level 1</strong> on it.</p>
+<p>That is the honest position, and it is the position of every specification at this stage. It is not a stable one, and this page exists to say what would change it.</p>
+<hr />
+<h2 id="versioning">Versioning</h2>
+<p><strong>Tightening and loosening are not symmetric.</strong></p>
+<ul>
+<li><strong>Tightening</strong> — adding a requirement, narrowing an existing one, or closing an interpretive gap — may occur in a <strong>minor version</strong>, with the change and its rationale recorded.</li>
+<li><strong>Loosening</strong> — removing a requirement, weakening an existing one, or widening an interpretation such that previously non-conformant behaviour becomes conformant — requires a <strong>major version</strong> and a documented rationale.</li>
+</ul>
+<p>The asymmetry is deliberate. A specification that can be quietly relaxed by its author is a specification that means whatever is convenient this quarter.</p>
+<p><strong>Clarifications</strong> — where a requirement&rsquo;s wording is ambiguous and the resolution does not change which behaviours conform — are published as numbered clarification questions with a resolution and a date. A clarification that turns out to loosen is a major version, whatever it was called when it was raised.</p>
+<p><strong>Conformance claims name a version.</strong> &ldquo;Conforms to PBGF-CS&rdquo; without a version is not a claim.</p>
+<hr />
+<h2 id="proposing-a-change">Proposing a change</h2>
+<p>Open an issue against the specification repository, or write to the address on the specification page. A useful proposal states:</p>
+<ol>
+<li><strong>Which requirement</strong>, by section number.</li>
+<li><strong>What is wrong with it</strong> — ambiguous, unsatisfiable, unnecessary, or missing.</li>
+<li><strong>The evidence.</strong> For &ldquo;unsatisfiable,&rdquo; an account of what was attempted and where it failed. For &ldquo;unnecessary,&rdquo; an argument that a conforming gate without it is not weakened.</li>
+<li><strong>The proposed wording</strong>, if you have one.</li>
+</ol>
+<p><strong>The most valuable contribution is evidence that a requirement cannot be satisfied in practice.</strong> That is not an objection to the specification; it is the specification working. Requirements are extracted from measurements, and a measurement that does not survive contact with a second implementer is a finding.</p>
+<hr />
+<h2 id="dispute-resolution-while-there-is-one-author">Dispute resolution, while there is one author</h2>
+<p>Until there is a second implementation, the author decides — and that is exactly the weakness this section names rather than hides.</p>
+<p>Two constraints apply in the meantime, and they are checkable by anyone:</p>
+<p><strong>1. The author may not resolve an ambiguity in favour of his own implementation&rsquo;s conformance score.</strong> Where a requirement is ambiguous and one reading would raise <code>gated</code>&rsquo;s position, the <strong>strict reading is published</strong> and the ambiguity is raised as a clarification question to be settled at arm&rsquo;s length. This has already been exercised once: §4.3(2)&rsquo;s <em>&ldquo;where the evaluation is scenario-based&rdquo;</em> has a plausible reading under which the requirement does not attach to a promotion verdict on an unknown artifact. The strict reading is published anyway, and the question is open.</p>
+<p><strong>2. Disputes and their resolutions are published</strong>, including ones the author loses, and including ones resolved against a proposal without a fully satisfying argument.</p>
+<p>These are process commitments, not mechanisms. They are stated here so that a failure to honour them is visible.</p>
+<hr />
+<h2 id="conformance-claims">Conformance claims</h2>
+<p><strong>Anyone may claim conformance for their own gate.</strong> No permission is required and no certification is offered — there is no body to certify, which is the point of Level 1 being self-attested.</p>
+<p>A claim should state: the <strong>level</strong>, the <strong>specification version</strong>, the <strong>scoped artifact-boundary pair</strong> the claim covers, and <strong>where the evidence can be inspected</strong>. A claim that names no scope is not a claim; conformance attaches to promotion verdicts for a defined artifact class at a defined boundary, not to a product.</p>
+<p><strong>The author&rsquo;s own claims carry no special standing.</strong> <code>gated</code> is a reference implementation, not an arbiter. Where its behaviour and the specification disagree, <strong>the specification is correct and the implementation has a defect</strong> — including where the implementation is more convenient.</p>
+<hr />
+<h2 id="where-this-should-live">Where this should live</h2>
+<p><strong>The intent is to move PBGF-CS out of single-author control.</strong> A conformance specification with one implementation is a proposal; the value of the trichotomy and the four requirements, if it is real, does not belong to whoever wrote them down first.</p>
+<p><strong>The destination should be an existing foundation</strong> with adjacent supply-chain or AI-assurance work and an established multi-vendor governance process — <strong>not a new body.</strong> At one implementation, forming a consortium would be ceremony rather than governance. SLSA&rsquo;s path, from a single-vendor internal practice to foundation governance with multiple contributors, is the relevant precedent and the shape worth copying.</p>
+<p><strong>The trigger is the point at which a second implementer proposes a change</strong> — that is when single-author control stops being merely the arrangement and becomes the obstacle. A second implementation without a proposed change is encouraging; a proposed change is the moment the process has to be real.</p>
+<p><strong>Until then</strong>, the honest description is: an early-stage specification, openly published, with a declared path out of single-author control and a stated trigger for taking it.</p>
+<hr />
+<h2 id="what-this-page-does-not-fix">What this page does not fix</h2>
+<p>Publishing a governance model does not create a governance body, does not produce a second implementer, and does not make a single-author specification into a standard. It states the terms on which those things would happen and makes the current arrangement&rsquo;s limits explicit.</p>
+<p><strong>The circularity is real: the specification and its reference implementation share an author.</strong> The mitigations available today are (a) that the implementation is measured against the specification in public and currently fails it, (b) that ambiguities are resolved against the author&rsquo;s interest, and (c) that the exit is stated with a trigger. Those reduce the problem. They do not close it, and no amount of process will — only a second implementer will.</p>
+<hr />
+<p><em>PBGF-CS v0.1 · specification: moriapp.dev/pbgf-cs · framework: moriapp.dev/pbgf · reference implementation: github.com/fjwood69/gated (Apache-2.0)</em></p>
+</article>
+<footer class="site">
+  <p>Specification: <a href="/pbgf-cs">moriapp.dev/pbgf-cs</a> · Framework: <a href="/pbgf">moriapp.dev/pbgf</a> · Proposals and feedback: <a href="mailto:fredjwood@proton.me">fredjwood@proton.me</a></p>
+</footer>
+</div>
+</body>
+</html>

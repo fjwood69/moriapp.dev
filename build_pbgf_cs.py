@@ -85,7 +85,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 </head>
 <body>
 <div class="wp-banner"><a href="/"><img src="/assets/{banner}" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
-<div class="topbar"><div class="wrap"><a href="/">← back to moriapp.dev</a><a href="{toggle_href}">{toggle_text}</a></div></div>
+<div class="topbar"><div class="wrap"><a href="/">← back to moriapp.dev</a><span><a href="/pbgf-cs/governance">Governance</a> &nbsp;·&nbsp; <a href="{toggle_href}">{toggle_text}</a></span></div></div>
 <div class="wrap">
 <header class="hero">
   <div class="kicker">Specification · Draft v0.1</div>
@@ -99,6 +99,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 </article>
 <footer class="site">
   <p>Feedback on this specification: <a href="mailto:fredjwood@proton.me">fredjwood@proton.me</a></p>
+  <p><a href="/pbgf-cs/governance">Governance</a> — versioning, how to propose a change, dispute resolution, and the path out of single-author control.</p>
 </footer>
 </div>
 </body>
