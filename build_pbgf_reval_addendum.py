@@ -42,16 +42,16 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PBGF re-validation addendum — mori (森)</title>
-<meta name="description" content="The published paper’s five claims, re-run on current agents in a sealed harness.">
+<meta name="description" content="Four of the published paper’s five claims, re-run on current agents in a sealed harness; the promotion-boundary claim was not.">
 <meta property="og:title" content="PBGF re-validation addendum">
-<meta property="og:description" content="The published paper’s five claims, re-run on current agents in a sealed harness.">
+<meta property="og:description" content="Four of the published paper’s five claims, re-run on current agents in a sealed harness; the promotion-boundary claim was not.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://moriapp.dev/pbgf/addendum">
 <meta property="article:author" content="Fred Wood">
 <meta name="author" content="Fred Wood">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PBGF re-validation addendum">
-<meta name="twitter:description" content="The published paper’s five claims, re-run on current agents in a sealed harness.">
+<meta name="twitter:description" content="Four of the published paper’s five claims, re-run on current agents in a sealed harness; the promotion-boundary claim was not.">
 <meta name="theme-color" content="{themecolor}">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>森</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +67,7 @@ for fname, (label, toggle_href, toggle_text, themecolor, banner, root) in THEMES
   <div class="kicker">Framework · Re-validation addendum</div>
   <h1>PBGF: re-validation addendum</h1>
   <p class="byline"><strong>Fred Wood</strong> · October 2026</p>
-  <p class="sub">The published paper’s five claims, re-run on current agents in a sealed harness.</p>
+  <p class="sub">Four of the published paper’s five claims, re-run on current agents in a sealed harness; the promotion-boundary claim was not.</p>
 </header>
 <article>
 {body}
