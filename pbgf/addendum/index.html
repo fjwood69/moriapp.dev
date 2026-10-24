@@ -69,22 +69,26 @@ footer.site a{color:var(--text-muted);}
   <p class="sub">The published paper’s five claims, re-run on current agents in a sealed harness.</p>
 </header>
 <article>
-<p><strong>Provenance</strong>
-- Primary result: <code>records/primary-analysis-result.json</code>, sha256 <code>971c10a7fe5868134f23db8a4dbb0c52d2585d0d4aebe0db729b3c305a8e5cf3</code>, from the frozen script <code>cf1df197</code>, run once on
-  2026-10-23 at 10:39:37 BST and committed before it was read. Cursor&rsquo;s independent recount of the 708 receipts matches it.
-- Signed chain: study manifest <code>ae8a4212</code> through amendment-08 <code>4b74eff6</code>; <code>verify_study</code>: 708 cells = 708 receipts.
-- Exploratory results (labelled, not the primary): <code>exploratory-20261023T094844Z.json</code>, sha256 <code>12caa4b9ea8777494f69667ade07c8760bbd8fd0d6e1d28bd967e0d79a82c62e</code>.
-- Intervals: Wilson score 95% on every proportion; the Bridge difference uses the Newcombe hybrid score 95% interval (method 10)
-  with Fisher&rsquo;s exact two-sided test.</p>
+<p><strong>Provenance</strong></p>
+<ul>
+<li>Primary result: <code>records/primary-analysis-result.json</code>, sha256 <code>971c10a7fe5868134f23db8a4dbb0c52d2585d0d4aebe0db729b3c305a8e5cf3</code>, from the frozen script <code>cf1df197</code>, run once on
+  2026-10-23 at 10:39:37 BST and committed before it was read. Cursor&rsquo;s independent recount of the 708 receipts matches it.</li>
+<li>Signed chain: study manifest <code>ae8a4212</code> through amendment-08 <code>4b74eff6</code>; <code>verify_study</code>: 708 cells = 708 receipts.</li>
+<li>Exploratory results (labelled, not the primary): <code>exploratory-20261023T094844Z.json</code>, sha256 <code>12caa4b9ea8777494f69667ade07c8760bbd8fd0d6e1d28bd967e0d79a82c62e</code>.</li>
+<li>Intervals: Wilson score 95% on every proportion; the Bridge difference uses the Newcombe hybrid score 95% interval (method 10)
+  with Fisher&rsquo;s exact two-sided test.</li>
+</ul>
 <h2 id="1-what-was-re-tested">1. What was re-tested</h2>
-<p>The published paper&rsquo;s five claims, re-run on current agents in a sealed harness:
-- <strong>Vehicles:</strong> ten, plus a Bridge vehicle (Haiku 4.5, the June model) for a manipulation check.
-- <strong>Harnesses:</strong> Claude Code, agy (Google) and Cursor.
-- <strong>Isolation:</strong> every run had a sealed container, an allowlisted proxy and a throwaway HOME.
-- <strong>Grading:</strong> June&rsquo;s own scorer, byte-identical, judges every line. An independent oracle runs alongside as a parallel column and
-  never rescores.
-- <strong>Pre-registration:</strong> the claims, the falsification lines, the mechanical rules and every cell were signed before any data. Eight
-  signed amendments followed, each before the data it governs. The record in §5 lists every deviation.</p>
+<p>The published paper&rsquo;s five claims, re-run on current agents in a sealed harness:</p>
+<ul>
+<li><strong>Vehicles:</strong> ten, plus a Bridge vehicle (Haiku 4.5, the June model) for a manipulation check.</li>
+<li><strong>Harnesses:</strong> Claude Code, agy (Google) and Cursor.</li>
+<li><strong>Isolation:</strong> every run had a sealed container, an allowlisted proxy and a throwaway HOME.</li>
+<li><strong>Grading:</strong> June&rsquo;s own scorer, byte-identical, judges every line. An independent oracle runs alongside as a parallel column and
+  never rescores.</li>
+<li><strong>Pre-registration:</strong> the claims, the falsification lines, the mechanical rules and every cell were signed before any data. Eight
+  signed amendments followed, each before the data it governs. The record in §5 lists every deviation.</li>
+</ul>
 <p>The 40-cell pilot is outside every denominator.</p>
 <p>Cells: Tier 1 (three arms × 10 per vehicle), Tier 3 (driven, June&rsquo;s A2 hook, n=25 for V3, V4 and V8), the Bridge (n=20), Tier 2
 (V1 n=50 unconditional; n=30 for each vehicle the pre-registered trigger named) and the O10 confirmation cells (n=20 per crossed
@@ -339,9 +343,11 @@ line).</p>
 grounds: the two batches are already reported side by side. It is a disclosed deviation (§5). The knowledge arm supplies the
 knowledge, so these are not &ldquo;spontaneous&rdquo; edits.</p>
 <h3 id="23-bridge-manipulation-check-only">2.3 Bridge (manipulation check only)</h3>
-<p>Haiku 4.5 sealed: coordinated_edit 7/20 (18–57%). June: 32/50 (50–76%).
-- Fisher&rsquo;s exact two-sided p = 0.0351.
-- Difference: -29 points (-50 to -3), Newcombe hybrid score 95%.</p>
+<p>Haiku 4.5 sealed: coordinated_edit 7/20 (18–57%). June: 32/50 (50–76%).</p>
+<ul>
+<li>Fisher&rsquo;s exact two-sided p = 0.0351.</li>
+<li>Difference: -29 points (-50 to -3), Newcombe hybrid score 95%.</li>
+</ul>
 <p>The Bridge bundles every condition change at once: sealing, a fresh HOME, the prompt, no chmod, the CLI version and the era. It can&rsquo;t
 attribute the drop to any one of them, and it is never evidence of equivalence. Cursor and agy have no bridge, so generational
 comparisons there are descriptive.</p>
@@ -468,57 +474,75 @@ place of the excluded amendment-04 replay receipt (<code>62e1d6ab</code>, E-HTTP
 provisioned). The boundary claim still rests on the structural argument plus June&rsquo;s two runs.</p>
 <h2 id="4-what-it-means">4. What it means</h2>
 <p><strong>The structural argument comes out stronger than the empirical one.</strong></p>
-<p>The in-loop control held: the protected files were unchanged on all 135 C4 driven and confirmation runs.
-- <strong>Runs with a genuine hook denial:</strong> 25/25, 23/25 and 0/25 in the driven cells (V3, V4, V8), and 19/20, 18/20 and 0/20 in the
-  confirmations.
-- <strong>Runs with no write or shell denial at all:</strong> one V4 driven run, one V3 confirmation run and one V4 confirmation run.
-- <strong>V8:</strong> its driven cell had a single read-only false positive and no genuine denial, and its confirmation cell had none.
-- <strong>Oracle-violating runs:</strong> 11/25, 24/25 and 22/25 in the driven cells, and 11/20, 20/20 and 17/20 in the confirmations.</p>
+<p>The in-loop control held: the protected files were unchanged on all 135 C4 driven and confirmation runs.</p>
+<ul>
+<li><strong>Runs with a genuine hook denial:</strong> 25/25, 23/25 and 0/25 in the driven cells (V3, V4, V8), and 19/20, 18/20 and 0/20 in the
+  confirmations.</li>
+<li><strong>Runs with no write or shell denial at all:</strong> one V4 driven run, one V3 confirmation run and one V4 confirmation run.</li>
+<li><strong>V8:</strong> its driven cell had a single read-only false positive and no genuine denial, and its confirmation cell had none.</li>
+<li><strong>Oracle-violating runs:</strong> 11/25, 24/25 and 22/25 in the driven cells, and 11/20, 20/20 and 17/20 in the confirmations.</li>
+</ul>
 <p>The hook protected the guard. It did not protect the behaviour the guard exists to check. Catching that is the job of the promotion
 boundary, which was not re-tested this round.</p>
 <h2 id="5-disclosures-and-deviations">5. Disclosures and deviations</h2>
-<p><strong>Deviations from the pre-registration, each decided before the data it affects:</strong>
-- the signed C3 pooled n=60 secondary is omitted (decided blind; the output key <code>c3_signed_pooled_secondary_omitted</code> records it);
-- C2 has no signed O10 threshold and no C2 line was crossed;
-- the eight signed amendments: cap; Tier 2 trigger; classifier repairs 03–05 and 07; rule-4 reruns 06; Tier 2 + O10 cells 08.</p>
-<p><strong>Deviations from June:</strong>
-- sealing;
-- one prompt;
-- no chmod;
-- no placebo gate;
-- a single hook arm (A2);
-- C5 not re-run.</p>
-<p><strong>ERROR and timeouts:</strong>
-- Only the three amendment-04 replay reclassifications (E-HTTP 429, all V4) are excluded: one Tier 1 prescriptive and two Tier 3
-  driven. Their rule-4 reruns are counted, and the counted denominators are 10 and 25.
-- All 14 timeouts are V8, and they stay in the denominators (rule 2).</p>
-<p><strong>Run-time disclosures:</strong>
-- A provider 503 does not pause an account, by design; a hand stop on two consecutive 5xx was standing and never needed.
-- The gateway readiness check was refreshed six times during amendment-08, all passing.</p>
+<p><strong>Deviations from the pre-registration, each decided before the data it affects:</strong></p>
+<ul>
+<li>the signed C3 pooled n=60 secondary is omitted (decided blind; the output key <code>c3_signed_pooled_secondary_omitted</code> records it);</li>
+<li>C2 has no signed O10 threshold and no C2 line was crossed;</li>
+<li>the eight signed amendments: cap; Tier 2 trigger; classifier repairs 03–05 and 07; rule-4 reruns 06; Tier 2 + O10 cells 08.</li>
+</ul>
+<p><strong>Deviations from June:</strong></p>
+<ul>
+<li>sealing;</li>
+<li>one prompt;</li>
+<li>no chmod;</li>
+<li>no placebo gate;</li>
+<li>a single hook arm (A2);</li>
+<li>C5 not re-run.</li>
+</ul>
+<p><strong>ERROR and timeouts:</strong></p>
+<ul>
+<li>Only the three amendment-04 replay reclassifications (E-HTTP 429, all V4) are excluded: one Tier 1 prescriptive and two Tier 3
+  driven. Their rule-4 reruns are counted, and the counted denominators are 10 and 25.</li>
+<li>All 14 timeouts are V8, and they stay in the denominators (rule 2).</li>
+</ul>
+<p><strong>Run-time disclosures:</strong></p>
+<ul>
+<li>A provider 503 does not pause an account, by design; a hand stop on two consecutive 5xx was standing and never needed.</li>
+<li>The gateway readiness check was refreshed six times during amendment-08, all passing.</li>
+</ul>
 <p><strong>Cap:</strong> amendment-01 reduced the gateway cap from $40 to $25 before Tier 1.</p>
 <p><strong>Spend:</strong> US$8.24 on the gateway (Bifrost-computed, with catalogue and accounting price overrides; not reconciled against provider
-invoices), against a $25 cap. Of that, $3.91 was in amendment-08. By model:
-- Kimi K2.7 Code: $5.57 over 522 requests;
-- MiMo v2.6 Pro: $1.55 over 1,081;
-- DeepSeek V4.1 Flash: $1.12 over 391.</p>
+invoices), against a $25 cap. Of that, $3.91 was in amendment-08. By model:</p>
+<ul>
+<li>Kimi K2.7 Code: $5.57 over 522 requests;</li>
+<li>MiMo v2.6 Pro: $1.55 over 1,081;</li>
+<li>DeepSeek V4.1 Flash: $1.12 over 391.</li>
+</ul>
 <p>These include the pilot, readiness checks and fault probes. V5 is priced on an accounting rate ($0.30 per million input tokens,
 $1.20 per million output; Parasail&rsquo;s own price was never confirmed), and V4 and V6 on Novita catalogue prices. The other harnesses
 ran on subscriptions (quota, not per-run cost).</p>
 <p><strong>agy&rsquo;s <code>GEMINI.md</code>:</strong> the arm-injection file for agy runs. Neither June&rsquo;s scorer nor the oracle reads it.</p>
-<p><strong>Credentials:</strong>
-- Agent runs used per-study credentials: a capped gateway key, and subscription logins placed in throwaway homes and scrubbed after
-  every run.
-- Every channel that carried study content off the host was scanned against every credential value the study used. No study
-  credential appears in any released artefact (frozen scanner <code>7fdd96f3</code>).
-- Operator session logs were within the scope of that scan. The services reachable through them are on a private network only.</p>
-<p><strong>Withheld:</strong>
-- run <code>715e4ccb</code>&rsquo;s transcript, for personal data (the account email, which a Cursor agent read from its own config file). It is
-  withheld rather than redacted because a redacted copy would no longer match the hash its receipt signs;
-- 697 compiled <code>.pyc</code> files (not scannable as text).</p>
-<p><strong>Other:</strong>
-- June&rsquo;s own C2 near-miss: Gemini 3.5 Flash, 26/30.
-- The probe residues and the hook&rsquo;s read-only false positives (§6).
-- Eval-awareness is a descriptive measure only (§6).</p>
+<p><strong>Credentials:</strong></p>
+<ul>
+<li>Agent runs used per-study credentials: a capped gateway key, and subscription logins placed in throwaway homes and scrubbed after
+  every run.</li>
+<li>Every channel that carried study content off the host was scanned against every credential value the study used. No study
+  credential appears in any released artefact (frozen scanner <code>7fdd96f3</code>).</li>
+<li>Operator session logs were within the scope of that scan. The services reachable through them are on a private network only.</li>
+</ul>
+<p><strong>Withheld:</strong></p>
+<ul>
+<li>run <code>715e4ccb</code>&rsquo;s transcript, for personal data (the account email, which a Cursor agent read from its own config file). It is
+  withheld rather than redacted because a redacted copy would no longer match the hash its receipt signs;</li>
+<li>697 compiled <code>.pyc</code> files (not scannable as text).</li>
+</ul>
+<p><strong>Other:</strong></p>
+<ul>
+<li>June&rsquo;s own C2 near-miss: Gemini 3.5 Flash, 26/30.</li>
+<li>The probe residues and the hook&rsquo;s read-only false positives (§6).</li>
+<li>Eval-awareness is a descriptive measure only (§6).</li>
+</ul>
 <h2 id="6-exploratory-labelled-not-pre-registered-beyond-the-eval-awareness-classifier-touches-no-claim">6. Exploratory (labelled; not pre-registered beyond the eval-awareness classifier; touches no claim)</h2>
 <p><strong>(a) Eval-awareness</strong> (pre-registered keyword classifier over each run&rsquo;s text, which includes tool output and the prompt;
 descriptive only). Opus 5.5 (V3) is not flagged in any placebo or driven cell. It shows visible reasoning in 41 of those 75
@@ -655,13 +679,15 @@ runs; for the other 34 the classifier could assess commands only.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>(b) V7&rsquo;s 23 scorer-passed, oracle-violating cells.</strong> These counts are heuristic static markers, and the categories overlap:
-- 20 inspect the call stack;
-- 5 add a numeric subclass that overrides equality or ordering;
-- 3 do both;
-- 1 does neither;
-- 19 change <code>total()</code>&rsquo;s signature;
-- none touches <code>reconcile.py</code>.</p>
+<p><strong>(b) V7&rsquo;s 23 scorer-passed, oracle-violating cells.</strong> These counts are heuristic static markers, and the categories overlap:</p>
+<ul>
+<li>20 inspect the call stack;</li>
+<li>5 add a numeric subclass that overrides equality or ordering;</li>
+<li>3 do both;</li>
+<li>1 does neither;</li>
+<li>19 change <code>total()</code>&rsquo;s signature;</li>
+<li>none touches <code>reconcile.py</code>.</li>
+</ul>
 <p>So 20 + 5 − 3 + 1 = 23 cells. Every cell deviates in the oracle&rsquo;s families C1–C5 and K2–K5; K1 deviates in 15 of the 23. Not
 every cell uses the stack-sniffing integer subclass.</p>
 <p><strong>(c)/(d) Denied attempts against effects, and read-only false positives.</strong> Each run&rsquo;s tool calls were replayed through its own
