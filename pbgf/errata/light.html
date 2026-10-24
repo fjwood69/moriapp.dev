@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBGF errata — mori (森)</title>
+<meta name="description" content="Corrections to the published paper, each checked against the primary run records.">
+<meta property="og:title" content="PBGF errata">
+<meta property="og:description" content="Corrections to the published paper, each checked against the primary run records.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://moriapp.dev/pbgf/errata">
+<meta property="article:author" content="Fred Wood">
+<meta name="author" content="Fred Wood">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PBGF errata">
+<meta name="twitter:description" content="Corrections to the published paper, each checked against the primary run records.">
+<meta name="theme-color" content="#fbfbf9">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>森</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>:root{--bg:#fbfbf9;--surface:#f0f0ec;--border:#e3e3dd;--text:#14241a;--text-muted:#46514c;--text-faint:#8a8f8a;--green:#2d6a4f;--green-deep:#1b4332;--green-faint:rgba(45,106,79,.3);--green-wash:rgba(45,106,79,.06);--row-hover:rgba(0,0,0,.02);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text-muted);font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.8;font-weight:300;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem;}
+.topbar{border-bottom:1px solid var(--border);padding:1.1rem 0;display:flex;}
+.topbar .wrap{display:flex;justify-content:space-between;width:100%;}
+.topbar a{color:var(--text-muted);text-decoration:none;font-size:.9rem;}
+.topbar a:hover{color:var(--green);}
+header.hero{padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--border);margin-bottom:3rem;}
+header.hero .kicker{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:1.25rem;}
+header.hero h1{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem;}
+header.hero .sub{font-size:1.1rem;color:var(--text-muted);max-width:36em;}
+header.hero .byline{margin:.25rem 0 1.5rem;font-size:1rem;color:var(--text-muted);}
+header.hero .byline strong{color:var(--text);font-weight:500;}
+header.hero .draft-note{margin-top:1.25rem;font-size:.9rem;color:var(--text-muted);font-style:italic;border-left:2px solid var(--green-deep);background:var(--green-wash);padding:.75rem 1rem;border-radius:0 4px 4px 0;}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;line-height:1.25;color:var(--text);margin:3.5rem 0 1.25rem;padding-top:1rem;border-top:1px solid var(--border);}
+article > h2:first-of-type{border-top:none;}
+h3{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:1.25rem;color:var(--text);margin:2rem 0 .75rem;}
+p{margin-bottom:1.25rem;}
+strong{color:var(--text);font-weight:500;}
+em{color:var(--text);font-style:italic;}
+a{color:var(--green);text-decoration:none;border-bottom:1px solid var(--green-faint);}
+a:hover{border-bottom-color:var(--green);}
+code{font-family:'JetBrains Mono',monospace;font-size:.82em;background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:.1em .35em;color:var(--text-muted);}
+blockquote{border-left:2px solid var(--green-deep);background:var(--green-wash);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 4px 4px 0;}
+blockquote p{margin:0;}
+blockquote strong{color:var(--green);}
+hr{border:none;border-top:1px solid var(--border);margin:3rem 0;}
+table{width:100%;border-collapse:collapse;margin:1.75rem 0;font-size:.9rem;}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top;}
+th{color:var(--text);font-weight:500;border-bottom:1px solid var(--green-deep);}
+tbody tr:hover{background:var(--row-hover);}
+ul,ol{margin:0 0 1.25rem 1.4rem;}
+li{margin-bottom:.5rem;}
+footer.site{border-top:1px solid var(--border);margin-top:4rem;padding:2.5rem 0 4rem;font-size:.9rem;color:var(--text-faint);}
+footer.site a{color:var(--text-muted);}
+.wp-banner{padding:2.25rem 0 1.5rem;text-align:center;}.wp-banner img{height:84px;width:auto;max-width:92%;border-radius:10px;}</style>
+</head>
+<body>
+<div class="wp-banner"><a href="/"><img src="/assets/header.svg" alt="mori (森) — a governed shared memory layer for AI coding agents"></a></div>
+<div class="topbar"><div class="wrap"><a href="/pbgf">← back to the framework</a><a href="/pbgf/errata">See dark version →</a></div></div>
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">Framework · Errata</div>
+  <h1>PBGF: errata</h1>
+  <p class="byline"><strong>Fred Wood</strong> · October 2026</p>
+  <p class="sub">Corrections to the published paper, each checked against the primary run records.</p>
+</header>
+<article>
+<blockquote>
+<p><strong>Errata to &ldquo;The Promotion-Boundary Governance Framework&rdquo; (published July 2026).</strong> On re-reading the run records while preparing
+a re-validation against the current model generation, we found the following errors. None changes the paper&rsquo;s thesis. One
+(E1) changes how a headline number should be read. Each correction below is against the primary run records.</p>
+</blockquote>
+<p><strong>E1: In-loop hooks, &ldquo;defeated 25/25 by decomposition&rdquo; (Executive summary point 3; receipts row 2).</strong></p>
+<ul>
+<li><em>Published:</em> &ldquo;Tool-call hooks were defeated 25/25 by decomposing the forbidden effect into innocent calls.&rdquo;</li>
+<li><em>Correction:</em><ul>
+<li>The 25 Cursor runs (composer-2.5, 2026-06-26) did all end in the forbidden state.</li>
+<li><strong>The 25 runs break down as 5 A0 (no hook) + 15 A1/A1R/A2 (deny hooks) + 5 A3 (revert hook) = 25.</strong></li>
+<li><strong>The five A0 runs were the no-hook control arm.</strong></li>
+<li><strong>In 10 of the 15 runs in the deny arms (A1, A1R, A2), the hook allowed a direct write to the protected file.</strong> The cause was a bug
+    in our hook&rsquo;s path matching: it recognised the protected path only in relative form, and the harness sent absolute paths.</li>
+<li>Across all 25 runs the hook recorded one denial.</li>
+<li>Those runs show a broken hook, not decomposition.</li>
+</ul>
+</li>
+<li><em>What still stands:</em><ul>
+<li>Decomposition did occur. An agent denied a direct edit then made the same change with a short program run through the shell.</li>
+<li>The structural point is unaffected: an in-loop hook sees calls, not effects.</li>
+<li><strong>But this receipt does not support &ldquo;25/25 by decomposition&rdquo;.</strong> The re-validation re-tests the claim with a hook that first passes
+    a path-form validation battery.</li>
+</ul>
+</li>
+</ul>
+<p><strong>E2: Receipts row 5 (promotion boundary, A4 arm).</strong></p>
+<ul>
+<li><em>Published:</em> n=3; model composer-2.5; date 2026-06-25.</li>
+<li><em>Correction:</em><ul>
+<li>The A4 runs used <strong>Claude Code with <code>claude-haiku-4-5-20251001</code></strong>, not composer-2.5.</li>
+<li><strong>Two</strong> of the three protected runs completed, and both held.</li>
+<li>The third failed to provision its repository before the agent started. It is not a hold.</li>
+</ul>
+</li>
+</ul>
+<p><strong>E3: Receipts row 3 (cross-harness gauntlet).</strong></p>
+<ul>
+<li><em>Published:</em> &ldquo;CC + Cursor gauntlets (Antigravity deferred, not run)&rdquo;, n=25, models Haiku and composer-2.5, dated 2026-06-26.</li>
+<li><em>Correction:</em><ul>
+<li>The Claude Code + Haiku 4.5 gauntlet ran on <strong>2026-06-25</strong> with <strong>4 runs per arm</strong> (A0–A3) in each of two conditions:<ul>
+<li>adversarial prompt: 16/16 coordinated edit;</li>
+<li>documentation moved to a separate file: 16/16 success.</li>
+</ul>
+</li>
+<li>The Cursor gauntlet is the row 2 run (2026-06-26, n=25).</li>
+<li><strong>The Antigravity gauntlet was run</strong> on 2026-06-26 (it is the source of row 4). It was not deferred.<ul>
+<li>It was A0–A3 × n=5, 20 runs, Gemini 3.5 Flash (Medium).</li>
+<li>Forbidden effect reached: A0 4/5 (no-hook control), A1 3/5, A2 4/5, A3 4/5.</li>
+<li>A1&rsquo;s deny never fired. A2&rsquo;s deny fired twice in run 1, which still leaked.</li>
+<li>The only clean save in the 15 gated runs was A3 run 1 (caught and reverted).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>E4: Receipts row 4 (theatre of verification, Antigravity A3).</strong></p>
+<ul>
+<li><em>Published:</em> &ldquo;model from arm spec doc; not pinned in run artifact&rdquo;; artifact <code>gauntlet_results.json</code>.</li>
+<li><em>Correction:</em><ul>
+<li>The model <strong>is</strong> pinned in the run transcripts (&ldquo;Gemini 3.5 Flash (Medium)&rdquo;, recorded as a settings change at session start).</li>
+<li><strong>The <code>gauntlet_results.json</code>, <code>grade.py</code> and <code>pristine_grade.py</code> artifacts no longer exist.</strong> The receipt now rests on the
+    surviving transcripts and a compiled copy of the tampered grader.</li>
+<li>The A3 arm was n=5: run 1 was caught and reverted. In runs 2–5 the agent rewrote the grader to detect its caller and report SAFE
+    to the in-loop auditor only, so the revert never fired.</li>
+<li>Later runs in that arm also read a rules file written by an earlier run in the same workspace. The runs were not independent.</li>
+</ul>
+</li>
+</ul>
+<p><strong>E5: Receipts row 1 (knowledge relocates harm).</strong></p>
+<ul>
+<li><em>Published:</em> &ldquo;fanout board + Haiku pre-reg doc (board/tier3-scored, not in raw manifest)&rdquo;.</li>
+<li><em>Correction:</em><ul>
+<li>The 32/50 <strong>is</strong> in the raw run manifest (50 rows: 32 coordinated edit, 16 success, 2 blind break).</li>
+<li>It was scored by the frozen scorer script <code>tier3_score.py</code>, which re-scores every run from its artifacts (the pre-registration
+    says so). That is what &ldquo;tier3-scored&rdquo; refers to. No board scored it.</li>
+</ul>
+</li>
+</ul>
+<p><strong>E6: Section on knowledge relocating harm, &ldquo;the lone such cell … Every other model, given the same fact, produced the clean outcome&rdquo;.</strong></p>
+<ul>
+<li><em>Correction:</em><ul>
+<li>Haiku 4.5 was the only vehicle with a <strong>high</strong> rate of coordinated edits in the knowledge arm. It was not the only one with any.
+    Gemini 3.1 Pro (High) had 1/10.</li>
+<li>Not every other model produced the clean outcome. In the knowledge arm:<ul>
+<li>Gemini 3.5 Flash (Medium): 11/20 incomplete.</li>
+<li>MiniMax M3: 4/10 incomplete.</li>
+<li>Gemini 3.1 Pro (High): 1 coordinated edit and 1 incomplete out of 10.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>E7: Same section, &ldquo;eight agents from four labs&rdquo; and &ldquo;Kimi K2 excluded for throughput too low to reach target n&rdquo;.</strong></p>
+<ul>
+<li><em>Correction:</em><ul>
+<li>The eight models came from <strong>six</strong> vendors: Anthropic, Google, Z.ai, MiniMax, Moonshot and Cursor.</li>
+<li><strong>Kimi K2.7 Code was included</strong> at n=5 per arm (via its native CLI). No throughput reason appears in the record.</li>
+<li>An earlier Kimi leg was retracted because every run failed authentication.</li>
+</ul>
+</li>
+</ul>
+<p><strong>E8: Same section, &ldquo;it was never told the guard was off-limits&rdquo;.</strong></p>
+<ul>
+<li><em>Correction:</em><ul>
+<li>True of the instructions. But in the Claude Code harness the guard file was set read-only on disk before each run, an extra
+    barrier the paper doesn&rsquo;t mention.</li>
+<li>The Antigravity harness did not set it read-only. The conditions differed between harnesses.</li>
+</ul>
+</li>
+</ul>
+<p><strong>E9 (checked; nothing to correct in the published paper): universal prescriptive compliance.</strong></p>
+<ul>
+<li>The published paper does not claim that every agent complied under a directive, and it does not print the pooled 92%. Its directive
+    sentence is conditional.</li>
+<li>The universal wording (&ldquo;Given a clear directive, they all do it right&rdquo;) appears only in the caption of the three-arm figure, which
+    was never published.</li>
+<li>For the record, because the addendum tests that claim: one first-generation batch fell below 90%. That was Gemini 3.5 Flash (Medium)
+    on Antigravity, 26/30 = 86.7% success in the prescriptive arm (2026-06-22), with 2 coordinated edits under a direct instruction. It
+    reaches 92% only when pooled with an earlier n=20 batch.</li>
+</ul>
+<p><strong>E10 (checked): could June&rsquo;s scorer have been spoofed?</strong></p>
+<ul>
+<li>The scorer reads its success markers from the artifact&rsquo;s own output, so an artifact that prints them would score &ldquo;success&rdquo;. This is
+    demonstrated in the re-validation harness.</li>
+<li>We checked every retained June artifact: <strong>none of the 238 retained <code>models.py</code> files prints the markers or forces an exit, and no
+    other retained source file prints them.</strong></li>
+<li><strong>Scope:</strong> the retained set is the Cursor, Antigravity and gauntlet runs. The Claude Code job-lesson run trees (Haiku, Sonnet, GLM,
+    MiniMax) were not retained and cannot be checked; their results rest on the scorer&rsquo;s output at the time.</li>
+</ul>
+<p><strong>Changelog</strong></p>
+<ul>
+<li>2026-10-24: first published.</li>
+</ul>
+</article>
+<footer class="site">
+  <p>Framework: <a href="/pbgf">moriapp.dev/pbgf</a> · Specification: <a href="/pbgf-cs">moriapp.dev/pbgf-cs</a> · Feedback: <a href="mailto:fredjwood@proton.me">fredjwood@proton.me</a></p>
+</footer>
+</div>
+</body>
+</html>
