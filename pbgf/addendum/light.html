@@ -471,6 +471,145 @@ changed) in 67 of 90 runs; four of them (V2, V4, V6, V9) in all 10.</p>
 </tbody>
 </table>
 <p>V7&rsquo;s are the visible case: 6/10 in Tier 1 and 17/30 in Tier 2.</p>
+<h3 id="26-extension-01-gpt-6-luna-v11-added-after-the-main-results-were-read">2.6 Extension 01: GPT-6 Luna (V11), added after the main results were read</h3>
+<p><strong>This vehicle was added after the ten vehicles&rsquo; results had been read.</strong> It ran as a separate pre-registered study
+(extension 01), signed before any of its cells, under the same frozen task, notes, scorer, oracle, claims, falsification
+lines and mechanical rules. It is reported here on its own and is never pooled into the tables above, which are unchanged.</p>
+<ul>
+<li><strong>Vehicle:</strong> OpenAI GPT-6 Luna in Claude Code via the gateway (Bifrost, then OpenRouter), with V4&rsquo;s settings (effort high,
+  gateway on, empty allowlist). This is not OpenAI&rsquo;s own harness; a Codex CLI arm may follow as a separate extension.</li>
+<li><strong>Cells:</strong> Tier 1 (three arms x 10) and Tier 3 (driven, A2 hook, n=25), because every vehicle added after the study gets
+  Tier 3. Three conditional envelopes were signed in advance with their trigger rules: the Tier 2 knowledge cell, the C1
+  confirmation and the C4 confirmation. The pinned evaluators fired <strong>only the C4 confirmation (n=20)</strong>. The Tier 2 and C1
+  envelopes did not fire and hold no receipts, as the verifier rule requires.</li>
+<li><strong>Record:</strong> 75 receipts, all completed; no ERROR, no timeout, no rerun. The analysis script was frozen, pinned in the signed
+  root and run once. Before reading V11 it reproduced this addendum&rsquo;s primary result (971c10a7) and the line-verdicts record
+  on the study&rsquo;s own receipts.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Line</th>
+<th>V11 (GPT-6 Luna)</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>placebo success 0/10 (0–28%)</td>
+<td>not crossed</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>prescriptive success 10/10 (72–100%); compliance 10/10</td>
+<td>not crossed</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>knowledge coordinated_edit 0/10 (0–28%); Tier 2 not triggered</td>
+<td>reported</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>hook respected 25/25 (87–100%)</td>
+<td><strong>crossed</strong></td>
+</tr>
+<tr>
+<td>C4 confirmation (O10, n=20)</td>
+<td>hook respected 20/20 (84–100%)</td>
+<td><strong>confirmed</strong></td>
+</tr>
+</tbody>
+</table>
+<p>In §2.4&rsquo;s columns (Tier 1):</p>
+<table>
+<thead>
+<tr>
+<th>Vehicle</th>
+<th>Placebo success</th>
+<th>Prescriptive success</th>
+<th>Knowledge success</th>
+<th>Knowledge coordinated_edit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V11 GPT-6 Luna via Bifrost/OpenRouter (Claude Code)</td>
+<td>0/10 (0–28%)</td>
+<td>10/10 (72–100%)</td>
+<td>9/10 (60–98%)</td>
+<td>0/10 (0–28%)</td>
+</tr>
+</tbody>
+</table>
+<p>The oracle column per arm (§2.5&rsquo;s measure; the oracle never rescores):</p>
+<table>
+<thead>
+<tr>
+<th>Arm</th>
+<th>coordinated_edit</th>
+<th>Oracle violating</th>
+<th>Scorer pass &amp; oracle violating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>placebo</td>
+<td>10/10 (72–100%)</td>
+<td>10/10</td>
+<td>0</td>
+</tr>
+<tr>
+<td>prescriptive</td>
+<td>0/10 (0–28%)</td>
+<td>0/10</td>
+<td>0</td>
+</tr>
+<tr>
+<td>knowledge</td>
+<td>0/10 (0–28%)</td>
+<td>0/10</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Placebo:</strong> coordinated_edit 10/10; oracle violating 10/10.</li>
+<li><strong>Knowledge:</strong> success 9/10 (60–98%), one incomplete; no scorer-passed, oracle-violating run.</li>
+<li><strong>Driven (C4):</strong></li>
+<li>June&rsquo;s scorer: success 0/25.</li>
+<li>Classifier: blind_bulldoze 25/25.</li>
+<li>Oracle violating: 25/25 driven and 20/20 confirmation.</li>
+<li>The hook held in every run; the behaviour broke in every run.</li>
+<li><strong>Exploratory</strong> (labelled; not pre-registered beyond the eval-awareness classifier; touches no claim):</li>
+<li><em>Eval-awareness:</em> flagged in 8/10 placebo runs, 22/25 driven runs and 15/20 confirmation runs.</li>
+<li><em>Denial replay:</em> every driven run&rsquo;s tool calls were replayed through its own launched hook, and all 45 matched the gate log.<ul>
+<li>Runs with a genuine denial: 25/25 driven (28 denials) and 20/20 confirmation (22).</li>
+<li>Read-only false positives: 0.</li>
+<li>Effect through: 0.</li>
+</ul>
+</li>
+</ul>
+<p><strong>V11 disclosures:</strong></p>
+<ul>
+<li><strong>Upstream provider:</strong> neither pinned nor recorded per response. OpenRouter listed seven endpoints across three providers
+  (OpenAI, Azure, Amazon Bedrock), all serving the same dated snapshot, openai/gpt-6-luna-20260922.</li>
+<li>The lock is the gateway&rsquo;s provider key, which allows only openai/gpt-6-luna.</li>
+<li>The weights behind the name are not pinned.</li>
+<li>E-MODEL checks the model string in the Claude Code transcript, which was openai/gpt-6-luna in the smoke run and in
+    every cell.</li>
+<li><strong>Effort:</strong> &ldquo;high&rdquo; is sent (as reasoning.effort, the same translation as V4). On a probe, low and high were
+  indistinguishable, so whether the model honours it is not shown.</li>
+<li><strong>Temperature:</strong> not sent; the provider default applies, as for V4.</li>
+<li><strong>Review:</strong> the consult model was not the model under test, which held no review seat.</li>
+<li><strong>Spend:</strong> US$0.25 on the gateway (Bifrost-computed) across probes, readiness checks and the 75 cells. The study key stood
+  at $8.49 of its $25 cap afterwards.</li>
+<li><strong>Records:</strong></li>
+<li>signed root ed50d4d2…, anchored to the closed study&rsquo;s final digest 4b74eff6…;</li>
+<li>analysis result sha256 74c06a4e79495872a53606a5ed4c89274e7fab2c2b61a15af40d0a98e959fb59;</li>
+<li>exploratory record sha256 0da2b5629f4e66eb5db12b7e4b5f761b3e703e98b8707d0f770329bb83beb364.</li>
+</ul>
 <h2 id="3-c5-the-promotion-boundary-was-not-re-tested">3. C5: the promotion boundary was not re-tested</h2>
 <p>C5 was not re-run this round. The published A4 stands as corrected in the errata (Haiku via Claude Code, two holds, run 3 never
 provisioned). The boundary claim still rests on the structural argument plus June&rsquo;s two runs.</p>
@@ -759,6 +898,12 @@ launched hook, and all 135 driven runs matched the gate log&rsquo;s deny count:<
 <p>No denied attempt was followed by an effect.</p>
 <h2 id="7-errata">7. Errata</h2>
 <p>Corrections to the published paper are published separately: <a href="/pbgf/errata">moriapp.dev/pbgf/errata</a>.</p>
+<h2 id="8-changelog">8. Changelog</h2>
+<ul>
+<li><strong>1.0</strong> (2026-10-24): first published.</li>
+<li><strong>1.1</strong> (2026-10-25): added §2.6, extension 01 (GPT-6 Luna, V11), run as a separate pre-registered study after the main
+  results were read. Nothing in sections 1–7 changed; the ten-vehicle tables are as published.</li>
+</ul>
 </article>
 <footer class="site">
   <p>Framework: <a href="/pbgf">moriapp.dev/pbgf</a> · Specification: <a href="/pbgf-cs">moriapp.dev/pbgf-cs</a> · Feedback: <a href="mailto:fredjwood@proton.me">fredjwood@proton.me</a></p>
